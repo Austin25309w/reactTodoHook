@@ -9,7 +9,7 @@ export default function FunctionTodo() {
     const[todos, setTodos] = useState([])
     const todoNameRef = useRef()
 
-    // to load saved todos
+    // to load retreive saved todos
     useEffect(() => { 
         const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
         if (storedTodos) setTodos(storedTodos)
@@ -30,7 +30,7 @@ export default function FunctionTodo() {
 
     function handleAddTodo(e){
         const name = todoNameRef.current.value
-        
+         
         if(name === '') return
         setTodos(prevTodos => {
             return [...prevTodos, {id: uuidv4(), name: name, completed: false} ]
@@ -52,6 +52,7 @@ export default function FunctionTodo() {
              <input ref = {todoNameRef} type = "text"/>
                 <button onClick = {handleAddTodo}>Add todo</button>
                 <button onClick = {handleClearTodos}>clear complete</button>
+                {/* where the list starts */}
                 <TodoList todos = {todos} toggleTodo={toggleTodo} /> 
                 <div>{todos.filter(todo => !todo.complete).length} left to do </div>
              <Example/>
