@@ -49,11 +49,11 @@ export default function FunctionTodo() {
     return (
         <div>
             <h1>Todo function</h1>
-            <TodoList todos = {todos} toggleTodo={toggleTodo} /> 
              <input ref = {todoNameRef} type = "text"/>
                 <button onClick = {handleAddTodo}>Add todo</button>
-             <button onClick = {handleClearTodos}>clear complete</button>
-             <div>{todos.filter(todo => !todo.complete).length} left to do </div>
+                <button onClick = {handleClearTodos}>clear complete</button>
+                <TodoList todos = {todos} toggleTodo={toggleTodo} /> 
+                <div>{todos.filter(todo => !todo.complete).length} left to do </div>
              <Example/>
         </div>
     )
