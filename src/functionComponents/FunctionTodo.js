@@ -53,7 +53,7 @@ export default function FunctionTodo() {
                 <button onClick = {handleAddTodo}>Add todo</button>
                 <button onClick = {handleClearTodos}>clear complete</button>
                 {/* where the list starts */}
-                <TodoList todos = {todos} toggleTodo={toggleTodo} /> 
+                <TodoList todos = {todos} toggleTodo={toggleTodo} setTodos={setTodos} /> 
                 <div>{todos.filter(todo => !todo.complete).length} left to do </div>
              <Example/>
         </div>
