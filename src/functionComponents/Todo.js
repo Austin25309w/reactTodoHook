@@ -31,18 +31,24 @@ export default function Todo({ todo, todos, toggleTodo, setTodos, todoEditing, s
                     checked = {todo.complete} 
                     onChange = {handleTodoClick}
                 />
-                {todo.name}
+                {todo.text}
                 <button onClick = {() => deleteTodo(todo.id) }>delete</button>
-                <button onClick={() => setTodoEditing(todo.id)}>edit</button>
-                <button onClick = {() => editTodo(todo.id)}>Submit Edit</button>
+
+                { todoEditing === todo.id 
+                    ? 
+                (<button onClick = {() => editTodo(todo.id)}>Submit Edit</button>) 
+                : 
+                (<button onClick={() => setTodoEditing(todo.id)}>edit</button>)  }
+                
+                
 
                 {todoEditing === todo.id
                 ? 
                 (<input type='text' 
-                        onChange={(e) => setTodos(e.target.value)} 
-                        value={editingText}/>) 
+                        onChange={(e) => setEditingText(e.target.value)} 
+                        />) 
                             : (
-                                <div>{todo.text}</div>
+                                <div>{null}</div>
                             )}
             </label>
             
