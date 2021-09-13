@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Todo({ todo, todos, toggleTodo, setTodos }) {
+export default function Todo({ todo, todos, toggleTodo, setTodos, todoEditing, setTodoEditing, editingText, setEditingText }) {
     function handleTodoClick(){
         toggleTodo(todo.id)
     }
@@ -11,6 +11,18 @@ export default function Todo({ todo, todos, toggleTodo, setTodos }) {
         setTodos(updatedTodo)
     }
 
+    function editTodo(id){
+        const updatedTodos = [...todos].map((todo) =>{
+            if(todo.id === id){
+                todo.text = editingText
+            }
+            return todo
+        })
+        setTodos(updatedTodos)
+        setTodoEditing(null)
+        setEditingText('')
+    };
+
     return (
         <div>
             <label>
@@ -19,8 +31,25 @@ export default function Todo({ todo, todos, toggleTodo, setTodos }) {
                     checked = {todo.complete} 
                     onChange = {handleTodoClick}
                 />
-                {todo.name}
+                {todo.text}
                 <button onClick = {() => deleteTodo(todo.id) }>delete</button>
+
+                { todoEditing === todo.id 
+                    ? 
+                (<button onClick = {() => editTodo(todo.id)}>Submit Edit</button>) 
+                : 
+                (<button onClick={() => setTodoEditing(todo.id)}>edit</button>)  }
+                
+                
+
+                {todoEditing === todo.id
+                ? 
+                (<input type='text' 
+                        onChange={(e) => setEditingText(e.target.value)} 
+                        />) 
+                            : (
+                                <div>{null}</div>
+                            )}
             </label>
             
         </div>

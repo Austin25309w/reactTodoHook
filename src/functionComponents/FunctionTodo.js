@@ -8,6 +8,8 @@ const LOCAL_STORAGE_KEY = 'todoApp.todos'
 export default function FunctionTodo() {
     const[todos, setTodos] = useState([])
     const todoNameRef = useRef()
+    const [todoEditing, setTodoEditing] = useState(null)
+    const [editingText, setEditingText] = useState('')
 
     // to load retreive saved todos
     useEffect(() => { 
@@ -41,7 +43,7 @@ export default function FunctionTodo() {
 
     }
     function handleClearTodos(){
-        const newTodos = todos.filter(todo => !todo.complete)
+        const newTodos = todos.filter(todo => !todo.completed)
         setTodos(newTodos)
     }
 
@@ -53,7 +55,14 @@ export default function FunctionTodo() {
                 <button onClick = {handleAddTodo}>Add todo</button>
                 <button onClick = {handleClearTodos}>clear complete</button>
                 {/* where the list starts */}
-                <TodoList todos = {todos} toggleTodo={toggleTodo} setTodos={setTodos} /> 
+                <TodoList todos = {todos} 
+                            toggleTodo={toggleTodo} 
+                                setTodos={setTodos}
+                                todoEditing = {todoEditing}
+                                setTodoEditing = {setTodoEditing}
+                                editingText = {editingText} 
+                                setEditingText = {setEditingText}
+                                /> 
                 <div>{todos.filter(todo => !todo.complete).length} left to do </div>
              <Example/>
         </div>
