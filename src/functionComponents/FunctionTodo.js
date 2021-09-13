@@ -63,7 +63,7 @@ export default function FunctionTodo() {
                                 editingText = {editingText} 
                                 setEditingText = {setEditingText}
                                 /> 
-                {/* <div>{todos.filter(todo => !todo.complete).length} left to do </div> */}
+                <div>{todos.filter(todo => !todo.complete).length} left to do </div>
              <Example/>
         </div>
     )
