@@ -5,6 +5,7 @@ export default function ToggleComponent(){
 
     return(
         <div>
+            {/* modal or checkbox */}
             <h2>useToggle</h2>
             <div>{value.toString()}</div>
             <button onClick={toggleValue} >Toggle</button>
