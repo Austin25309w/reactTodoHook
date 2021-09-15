@@ -4,6 +4,8 @@ import {v4 as uuidv4} from 'uuid'
 import Example from './Example'
 import ToggleComponent from './ToggleComponent'
 import TimeoutComponent from './TimeoutComponent'
+import DebounceComponent from './DebounceComponent'
+import UpdateEffectComponent from './UpdateEffectComponent'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -69,6 +71,8 @@ export default function FunctionTodo() {
              <Example/>
              <ToggleComponent/>
              <TimeoutComponent/>
+             <DebounceComponent/>
+             <UpdateEffectComponent/>
         </div>
     )
 }
