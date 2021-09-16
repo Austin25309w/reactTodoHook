@@ -26,5 +26,6 @@ export default function useArray(defaultValue){
     function clear() {
         setArray([])
     }
+    
     return { array, set: setArray, push, filter, update, remove, clear}
 }

@@ -2,11 +2,11 @@ import React, { useState, useRef, useEffect } from 'react'
 import TodoList from './TodoList'
 import {v4 as uuidv4} from 'uuid'
 import Example from './Example'
-import ToggleComponent from './ToggleComponent'
-import TimeoutComponent from './TimeoutComponent'
-import DebounceComponent from './DebounceComponent'
-import UpdateEffectComponent from './UpdateEffectComponent'
-import ArrayComponent from './ArrayComponent'
+import ToggleComponent from './useToggle/ToggleComponent'
+import TimeoutComponent from './useTimeout/TimeoutComponent'
+import DebounceComponent from './useDebounce/DebounceComponent'
+import UpdateEffectComponent from './useUpdateEffect/UpdateEffectComponent'
+import ArrayComponent from './useArray/ArrayComponent'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -72,7 +72,7 @@ export default function FunctionTodo() {
              <Example/>
              <ToggleComponent/>
              <TimeoutComponent/>
-             <DebounceComponent/>
+             {/* <DebounceComponent/> */}
              <UpdateEffectComponent/>
              <ArrayComponent/>
         </div>
