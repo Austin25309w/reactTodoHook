@@ -69,6 +69,7 @@ export default function FunctionTodo() {
                                 setEditingText = {setEditingText}
                                 /> 
                 <div>{todos.filter(todo => !todo.complete).length} left to do </div>
+                
              <Example/>
              <ToggleComponent/>
              <TimeoutComponent/>
