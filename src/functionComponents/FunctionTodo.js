@@ -7,6 +7,7 @@ import TimeoutComponent from './useTimeout/TimeoutComponent'
 import DebounceComponent from './useDebounce/DebounceComponent'
 import UpdateEffectComponent from './useUpdateEffect/UpdateEffectComponent'
 import ArrayComponent from './useArray/ArrayComponent'
+import Album from './Album'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -69,13 +70,14 @@ export default function FunctionTodo() {
                                 setEditingText = {setEditingText}
                                 /> 
                 <div>{todos.filter(todo => !todo.complete).length} left to do </div>
-                
+
              <Example/>
              <ToggleComponent/>
              <TimeoutComponent/>
              {/* <DebounceComponent/> */}
              <UpdateEffectComponent/>
              <ArrayComponent/>
+             <Album />
         </div>
     )
 }
