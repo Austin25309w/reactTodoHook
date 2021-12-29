@@ -8,6 +8,7 @@ import DebounceComponent from './useDebounce/DebounceComponent'
 import UpdateEffectComponent from './useUpdateEffect/UpdateEffectComponent'
 import ArrayComponent from './useArray/ArrayComponent'
 import Album from './Album'
+import Calculator from '../calculator_2022/Calculator'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -71,6 +72,8 @@ export default function FunctionTodo() {
                                 /> 
                 <div>{todos.filter(todo => !todo.complete).length} left to do </div>
 
+            
+            
              <Example/>
              <ToggleComponent/>
              <TimeoutComponent/>
@@ -78,6 +81,7 @@ export default function FunctionTodo() {
              <UpdateEffectComponent/>
              <ArrayComponent/>
              <Album />
+             <Calculator/>
         </div>
     )
 }

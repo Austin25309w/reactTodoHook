@@ -54,3 +54,16 @@
 // )
 
 
+tags: [{ value: 'Ocean', title: 'Ocean' }, { value: 'People', title: 'People' }],
+
+
+
+const [setButton, setUsebutton ] = React.useState(false)
+
+https://youtu.be/_2kIeUc0_7c
+
+
+  {/* <Gallery images={IMAGES} /> */}
+        {/* ternery operator check if which button is clicked : picture button ? video button */}
+        {/* <Gallery images={VIDEOS} /> */}
+        {/* https://youtu.be/_2kIeUc0_7c */}

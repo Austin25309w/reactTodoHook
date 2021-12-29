@@ -38,14 +38,6 @@ export default function Todo({ todo, todos, toggleTodo, setTodos, todoEditing, s
                 
                 <button onClick = {() => deleteTodo(todo.id) }>delete</button>
 
-                { todoEditing === todo.id 
-                    ? 
-                (<button onClick = {() => editTodo(todo.id)}>Submit Edit</button>) 
-                
-                : 
-                (<button onClick={() => setTodoEditing(todo.id)}>edit</button>)  }
-                
-                
 
                 {todoEditing === todo.id
                 ? 
@@ -55,6 +47,17 @@ export default function Todo({ todo, todos, toggleTodo, setTodos, todoEditing, s
                             : (
                                 <div>{null}</div>
                             )}
+
+                { todoEditing === todo.id 
+                    ? 
+                (<button onClick = {() => editTodo(todo.id)}>Submit Edit</button>) 
+                
+                : 
+                (<button onClick={() => setTodoEditing(todo.id)}>edit</button>)  }
+                
+                
+
+                
             </label>
             
         </div>

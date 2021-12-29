@@ -35,9 +35,9 @@ const IMAGES =
                 <div>
                         <h1>Gallery</h1>
                         <Gallery images={IMAGES}/>,
-                        document.getElementById('example-0')
+                        {/* document.getElementById('example-0') */}
                 </div>
                 
-        );
+        ); 
 
 }
