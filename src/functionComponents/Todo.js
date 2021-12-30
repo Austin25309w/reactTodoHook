@@ -14,7 +14,7 @@ export default function Todo({ todo, todos, toggleTodo, setTodos, todoEditing, s
     function editTodo(id){
         const updatedTodos = [...todos].map((todo) =>{
             if(todo.id === id){
-                todo.text = editingText
+                todo.name = editingText
             }
             return todo
         })
@@ -31,16 +31,13 @@ export default function Todo({ todo, todos, toggleTodo, setTodos, todoEditing, s
                     checked = {todo.complete} 
                     onChange = {handleTodoClick}
                 />
-                {todo.text}
+                {console.log(todo.text)}
+                {todo.name}
+
+
+                
                 <button onClick = {() => deleteTodo(todo.id) }>delete</button>
 
-                { todoEditing === todo.id 
-                    ? 
-                (<button onClick = {() => editTodo(todo.id)}>Submit Edit</button>) 
-                : 
-                (<button onClick={() => setTodoEditing(todo.id)}>edit</button>)  }
-                
-                
 
                 {todoEditing === todo.id
                 ? 
@@ -50,6 +47,17 @@ export default function Todo({ todo, todos, toggleTodo, setTodos, todoEditing, s
                             : (
                                 <div>{null}</div>
                             )}
+
+                { todoEditing === todo.id 
+                    ? 
+                (<button onClick = {() => editTodo(todo.id)}>Submit Edit</button>) 
+                
+                : 
+                (<button onClick={() => setTodoEditing(todo.id)}>edit</button>)  }
+                
+                
+
+                
             </label>
             
         </div>

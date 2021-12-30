@@ -2,6 +2,13 @@ import React, { useState, useRef, useEffect } from 'react'
 import TodoList from './TodoList'
 import {v4 as uuidv4} from 'uuid'
 import Example from './Example'
+import ToggleComponent from './useToggle/ToggleComponent'
+import TimeoutComponent from './useTimeout/TimeoutComponent'
+import DebounceComponent from './useDebounce/DebounceComponent'
+import UpdateEffectComponent from './useUpdateEffect/UpdateEffectComponent'
+import ArrayComponent from './useArray/ArrayComponent'
+import Album from './Album'
+import Calculator from '../calculator_2022/Calculator'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -64,7 +71,17 @@ export default function FunctionTodo() {
                                 setEditingText = {setEditingText}
                                 /> 
                 <div>{todos.filter(todo => !todo.complete).length} left to do </div>
+
+            
+            
              <Example/>
+             <ToggleComponent/>
+             <TimeoutComponent/>
+             {/* <DebounceComponent/> */}
+             <UpdateEffectComponent/>
+             <ArrayComponent/>
+             <Album />
+             <Calculator/>
         </div>
     )
 }
