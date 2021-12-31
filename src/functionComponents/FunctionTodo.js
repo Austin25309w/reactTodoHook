@@ -9,6 +9,7 @@ import UpdateEffectComponent from './useUpdateEffect/UpdateEffectComponent'
 import ArrayComponent from './useArray/ArrayComponent'
 import Album from './Album'
 import Calculator from '../calculator_2022/Calculator'
+import './functionComponents.css'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -57,6 +58,8 @@ export default function FunctionTodo() {
  
     return (
         <div>
+            <Calculator/>
+            <div className='todo'>
             <h1>Todo function</h1>
              <input ref = {todoNameRef} type = "text"/>
                 <button onClick = {handleAddTodo}>Add todo</button>
@@ -71,17 +74,19 @@ export default function FunctionTodo() {
                                 setEditingText = {setEditingText}
                                 /> 
                 <div>{todos.filter(todo => !todo.complete).length} left to do </div>
-
+            </div>
             
-            
-             <Example/>
-             <ToggleComponent/>
-             <TimeoutComponent/>
-             {/* <DebounceComponent/> */}
-             <UpdateEffectComponent/>
-             <ArrayComponent/>
-             <Album />
-             <Calculator/>
+             
         </div>
     )
 }
+
+
+
+{/* <Example/>
+<ToggleComponent/>
+<TimeoutComponent/>
+ <DebounceComponent/>
+<UpdateEffectComponent/>
+<ArrayComponent/>
+<Album /> */}
