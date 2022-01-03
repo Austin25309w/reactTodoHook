@@ -1,0 +1,20 @@
+.header_container {
+    border: 1px solid black;
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    background: #6cf;
+    margin: 2rem;
+    width: 50%;
+    /* height: 100%; */
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header_container .option {
+    text-decoration: none;
+}
+
+.option{
+    padding: 10px 15px;
+}

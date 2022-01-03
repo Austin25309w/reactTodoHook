@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import TodoList from './classComponents/TodoList';
-import FunctionTodo from './functionComponents/FunctionTodo';
+import App from './App'
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <FunctionTodo/>,
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>
+  ,
   document.getElementById('root')
 );
 

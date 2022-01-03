@@ -58,7 +58,7 @@ export default function FunctionTodo() {
  
     return (
         <div>
-            <Calculator/>
+            
             <div className='todo'>
             <h1>Todo function</h1>
              <input ref = {todoNameRef} type = "text"/>
