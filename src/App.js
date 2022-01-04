@@ -4,6 +4,8 @@ import FunctionTodo from './functionComponents/FunctionTodo';
 import HomePage from './pages/homepage';
 import { Switch, Route } from 'react-router-dom';
 import Header from './header/header.component';
+import CarLoan from './CarLoan/CarLoan'
+import Mortgage from './Mortgage/Mortgage'
 import './App.css'
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
             <Route exact path='/reactTodoHook/' component = { HomePage }/>
             <Route path = '/reactTodoHook/calculator' component = { Calculator }/>
             <Route path = '/reactTodoHook/todo' component ={ FunctionTodo }/>
+            <Route path = '/reactTodoHook/todo' component ={ CarLoan }/>
+            <Route path = '/reactTodoHook/todo' component ={ Mortgage }/>
         </Switch>
         <Header/>
         </div>

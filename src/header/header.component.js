@@ -10,6 +10,10 @@ const Header = () => (
             CALCULATOR </Link>
         <Link className='option' to='/reactTodoHook/todo'>
             TODO </Link>
+        <Link className='option' to='/reactTodoHook/carloan'>
+        CAR LOAN </Link>
+        <Link className='option' to='/reactTodoHook/mortage'>
+            MORTGAGE </Link>
     </div>
 )
 
