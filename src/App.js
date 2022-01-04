@@ -11,9 +11,9 @@ function App() {
         <div className='App'>
         
         <Switch>
-            <Route exact path='/' component = { HomePage }/>
-            <Route path = '/calculator' component = { Calculator }/>
-            <Route path = '/todo' component ={ FunctionTodo }/>
+            <Route exact path='/reactTodoHook/' component = { HomePage }/>
+            <Route path = '/reactTodoHook/calculator' component = { Calculator }/>
+            <Route path = '/reactTodoHook/todo' component ={ FunctionTodo }/>
         </Switch>
         <Header/>
         </div>
