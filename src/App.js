@@ -16,8 +16,8 @@ function App() {
             <Route exact path='/reactTodoHook/' component = { HomePage }/>
             <Route path = '/reactTodoHook/calculator' component = { Calculator }/>
             <Route path = '/reactTodoHook/todo' component ={ FunctionTodo }/>
-            <Route path = '/reactTodoHook/todo' component ={ CarLoan }/>
-            <Route path = '/reactTodoHook/todo' component ={ Mortgage }/>
+            <Route path = '/reactTodoHook/carloan' component ={ CarLoan }/>
+            <Route path = '/reactTodoHook/mortgage' component ={ Mortgage }/>
         </Switch>
         <Header/>
         </div>
