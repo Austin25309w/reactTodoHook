@@ -3,6 +3,8 @@ import './Calculator-Styles.css';
 import { useReducer } from 'react';
 import DigitButton from './DigitButton';
 import OperationButton from './OperationButton';
+import Mortgage from '../Mortgage/Mortgage';
+import CarLoan from '../CarLoan/CarLoan';
 
 export const ACTIONS = {
     ADD_DIGIT: 'add-digit',
@@ -165,9 +167,14 @@ function Calculator() {
                 className="span-two" 
                 onClick= { ()=> dispatch({type: ACTIONS.EVALUATE })}
             >=</button>
-
+            <div>
+                <Mortgage/>
+                <CarLoan/>
+            </div>
+        
 
         </div>
+        
     )
 }
 
