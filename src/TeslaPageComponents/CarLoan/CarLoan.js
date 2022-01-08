@@ -1,7 +1,33 @@
 import React from 'react';
+import './carLoan.css'
 
 const CarLoan = () => {
-    return <div><h1>CarLoan</h1></div>
+    return (<div className='car_loan'>
+        <h1>CarLoan</h1>
+        <div>
+        <p>Loan Amount</p>
+        <input></input>
+        </div>
+        <div>
+        <p>Interest rate (%)</p>
+        <input></input>
+       </div>
+       <div>
+        <p>Loan Period (months)</p>
+        <input></input>
+       </div>
+
+        <div>
+            <h4>Total cost of car loan</h4>
+            {/* <h4>{this.state.carLoan}</h4> */}
+        </div>
+
+        <div>
+            <h4>Monthly Payments</h4>
+            {/* <h4>{this.state.monthlyPayments}</h4> */}
+        </div>
+        
+    </div>)
 
 }
 

@@ -1,10 +1,12 @@
 /* eslint-disable default-case */
 import './Calculator-Styles.css';
-import { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 import DigitButton from './DigitButton';
 import OperationButton from './OperationButton';
 import Mortgage from '../Mortgage/Mortgage';
 import CarLoan from '../CarLoan/CarLoan';
+import UseStateComponent from '../../functionComponents/useState/useStateComponent';
+import ReactSwitch from 'react-switch';
 
 export const ACTIONS = {
     ADD_DIGIT: 'add-digit',
@@ -139,42 +141,56 @@ function formatOperand(operand) {
 
 function Calculator() {
     const [{ currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer, {})
+    const [checked, setChecked] = useState(false);
+    const visibility = checked ? 'visible' : 'hidden';
+    const handleChange = nextChecked => { setChecked(nextChecked)}
     return (
-        <div className="calculator-grid">
-            <div className="output">
-                <div className="previous-operand">{formatOperand(previousOperand)}{operation}</div>
-                <div className="current-operand">{formatOperand(currentOperand)}</div>
+        <div className='calculator_container'>
+            <div className="calculator-grid">
+                <div className="output">
+                    <div className="previous-operand">{formatOperand(previousOperand)}{operation}</div>
+                    <div className="current-operand">{formatOperand(currentOperand)}</div>
+                </div>
+                <button className="span-two"
+                    onClick= {()=> dispatch({type:ACTIONS.CLEAR})}>AC</button>
+                <button onClick={() => dispatch({type: ACTIONS.DELETE_DIGIT})}>DEL</button>
+                <OperationButton operation="÷" dispatch={dispatch}/>
+                <DigitButton digit="1" dispatch={dispatch}/>
+                <DigitButton digit="2" dispatch={dispatch}/>
+                <DigitButton digit="3" dispatch={dispatch}/>
+                <OperationButton operation="*" dispatch={dispatch}/>
+                <DigitButton digit="4" dispatch={dispatch}/>
+                <DigitButton digit="5" dispatch={dispatch}/>
+                <DigitButton digit="6" dispatch={dispatch}/>
+                <OperationButton operation="+" dispatch={dispatch}/>
+                <DigitButton digit="7" dispatch={dispatch}/>
+                <DigitButton digit="8" dispatch={dispatch}/>
+                <DigitButton digit="9" dispatch={dispatch}/>
+                <OperationButton operation="-" dispatch={dispatch}/>
+                <DigitButton digit="." dispatch={dispatch}/>
+                <DigitButton digit="0" dispatch={dispatch}/>
+                <button 
+                    className="span-two" 
+                    onClick= { ()=> dispatch({type: ACTIONS.EVALUATE })}
+                >=</button>
             </div>
-            <button className="span-two"
-                onClick= {()=> dispatch({type:ACTIONS.CLEAR})}>AC</button>
-            <button onClick={() => dispatch({type: ACTIONS.DELETE_DIGIT})}>DEL</button>
-            <OperationButton operation="÷" dispatch={dispatch}/>
-            <DigitButton digit="1" dispatch={dispatch}/>
-            <DigitButton digit="2" dispatch={dispatch}/>
-            <DigitButton digit="3" dispatch={dispatch}/>
-            <OperationButton operation="*" dispatch={dispatch}/>
-            <DigitButton digit="4" dispatch={dispatch}/>
-            <DigitButton digit="5" dispatch={dispatch}/>
-            <DigitButton digit="6" dispatch={dispatch}/>
-            <OperationButton operation="+" dispatch={dispatch}/>
-            <DigitButton digit="7" dispatch={dispatch}/>
-            <DigitButton digit="8" dispatch={dispatch}/>
-            <DigitButton digit="9" dispatch={dispatch}/>
-            <OperationButton operation="-" dispatch={dispatch}/>
-            <DigitButton digit="." dispatch={dispatch}/>
-            <DigitButton digit="0" dispatch={dispatch}/>
-            <button 
-                className="span-two" 
-                onClick= { ()=> dispatch({type: ACTIONS.EVALUATE })}
-            >=</button>
-            <div>
-                <Mortgage/>
-                <CarLoan/>
+            {/* carloan calculator */}
+            <div className='carloan_calculator'>
+            <h2>Toggle to {`${checked?'Hide':'Show'}` } CARLOAN Calculator</h2>
+            <ReactSwitch 
+                onChange={handleChange} 
+                checked={checked}
+                width = {68}
+                height = {40}
+                handleDiameter = {40}/>
+                    <div style={{visibility}}>
+                        <CarLoan />
+                    </div>       
+                    
             </div>
-        
-
+            
         </div>
-        
+  
     )
 }
 
