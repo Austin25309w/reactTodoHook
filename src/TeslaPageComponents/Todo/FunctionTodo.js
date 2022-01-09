@@ -10,6 +10,8 @@ import {v4 as uuidv4} from 'uuid'
 // import Album from './Album'
 // import Calculator from '../calculator_2022/Calculator'
 import './functionComponents.css'
+import UseReducerTodo from '../../functionComponents/useReducer/useReducerTodo';
+import UseReducerCounter from '../../functionComponents/useReducer/useReducerCounter'
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -75,8 +77,8 @@ export default function FunctionTodo() {
                                 /> 
                 <div>{todos.filter(todo => !todo.complete).length} left to do </div>
             </div>
-            
-             
+            <UseReducerCounter/>
+             <UseReducerTodo/>
         </div>
     )
 }

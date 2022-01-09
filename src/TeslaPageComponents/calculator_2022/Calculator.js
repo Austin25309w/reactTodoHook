@@ -5,8 +5,8 @@ import DigitButton from './DigitButton';
 import OperationButton from './OperationButton';
 import Mortgage from '../Mortgage/Mortgage';
 import CarLoan from '../CarLoan/CarLoan';
-import UseStateComponent from '../../functionComponents/useState/useStateComponent';
 import ReactSwitch from 'react-switch';
+
 
 export const ACTIONS = {
     ADD_DIGIT: 'add-digit',
@@ -188,6 +188,8 @@ function Calculator() {
                     </div>       
                     
             </div>
+            
+            
             
         </div>
   
