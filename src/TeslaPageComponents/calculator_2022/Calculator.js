@@ -5,6 +5,7 @@ import DigitButton from './DigitButton';
 import OperationButton from './OperationButton';
 import Mortgage from '../Mortgage/Mortgage';
 import CarLoan from '../CarLoan/CarLoan';
+import AprCalculator from '../aprCalculator/AprCalculator';
 import ReactSwitch from 'react-switch';
 
 
@@ -141,9 +142,7 @@ function formatOperand(operand) {
 
 function Calculator() {
     const [{ currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer, {})
-    const [checked, setChecked] = useState(false);
-    const visibility = checked ? 'visible' : 'hidden';
-    const handleChange = nextChecked => { setChecked(nextChecked)}
+
     return (
         <div className='calculator_container'>
             <div className="calculator-grid">
@@ -176,17 +175,10 @@ function Calculator() {
             </div>
             {/* carloan calculator */}
             <div className='carloan_calculator'>
-            <h2>Toggle to {`${checked?'Hide':'Show'}` } CARLOAN Calculator</h2>
-            <ReactSwitch 
-                onChange={handleChange} 
-                checked={checked}
-                width = {68}
-                height = {40}
-                handleDiameter = {40}/>
-                    <div style={{visibility}}>
                         <CarLoan />
-                    </div>       
-                    
+            </div>
+            <div className='carloan_calculator'>
+                        <AprCalculator />
             </div>
             
             

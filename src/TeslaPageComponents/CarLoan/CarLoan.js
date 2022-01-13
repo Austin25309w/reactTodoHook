@@ -1,11 +1,18 @@
 import {React, useState} from 'react';
 import './carLoan.css'
+import ReactSwitch from 'react-switch';
+
 
 const CarLoan = () => {
     const[amount, setAmount] = useState(0)
     const[interest, setInterest] = useState(0)
     const[period, setPeriod] = useState(0)
-    const[ans, setAns] = useState()
+    const[carLoan, setCarLoan] = useState()
+
+    const [seecarloan, setseeCarloan] = useState(false);
+    const visibility = seecarloan ? 'visible' : 'hidden';
+    const handleCarloan = nextChecked => { setseeCarloan(nextChecked)}
+
 
     function loanCalculation(){
             let decimalRate = interest / 100;
@@ -16,7 +23,7 @@ const CarLoan = () => {
             let byOne = 1 / byPeriod ;
             let oneSubtract = 1 - byOne;
             let finalAns = Math.round(amountInterest) / oneSubtract.toFixed(2) 
-            setAns(finalAns);
+            setCarLoan(finalAns.toFixed(2));
     }
 
     function addComma(x){
@@ -25,37 +32,48 @@ const CarLoan = () => {
         return comma.join('.') 
     }
 
+    function totalGasPriceCalculator(){
+
+    }
+
+
     // 6.74%, 36mo, $10,000 / 311.11
 
-    return (<div className='car_loan'>
-        <h1>CarLoan</h1>
-        <form >
-            <div>
-                <p >Loan Amount</p>
-                <input type='number' placeholder='amount' onChange={ e => setAmount(e.target.value)}/>
-            </div>
-            <div>
-                <p>Interest rate (%)</p>
-                <input type='number' placeholder='rate' onChange={ e => setInterest(e.target.value)}/>
-            </div>
-            <div>
-                <p>Loan Period (months)</p>
-                <input type='number' placeholder='month' onChange={ e => setPeriod(e.target.value)}/>
-            </div>
-        </form>
+    return (
+    <div className='car_loan'>
+        <h2>Toggle to {`${seecarloan?'Hide':'Show'}` } CARLOAN Calculator</h2>
+            <ReactSwitch 
+                onChange={handleCarloan} 
+                checked={seecarloan}
+                width = {68}
+                height = {40}
+                handleDiameter = {40}/>
+                    <div style={{visibility}}>
+                    <h1>CarLoan</h1>
+                        <form >
+                            <div>
+                                <p >Loan Amount</p>
+                                <input type='number' placeholder='amount' onChange={ e => setAmount(e.target.value)}/>
+                            </div>
+                            <div>
+                                <p>Interest rate (%)</p>
+                                <input type='number' placeholder='rate' onChange={ e => setInterest(e.target.value)}/>
+                            </div>
+                            <div>
+                                <p>Loan Period (months)</p>
+                                <input type='number' placeholder='month' onChange={ e => setPeriod(e.target.value)}/>
+                            </div>
+                        </form>
+                        <br/>
+                        <div>
+                            <button onClick={ () =>loanCalculation(amount, interest, period)}>submit </button>
+                            <span><h4>Monthly Payments</h4> <h1>${carLoan}</h1></span>
+                        </div>
+                    </div>    
         
-
-        <div>
-            <h4>Total cost of car loan</h4>
-        </div>
-
-        <div>
-            <button onClick={ () =>loanCalculation(amount, interest, period)}>submit </button>
-            <span><h4>Monthly Payments</h4>${ans}</span>
-        </div>
         
-    </div>)
-
+    </div>
+    )
 }
 
 export default CarLoan
