@@ -8,7 +8,7 @@ const AprCalculator = () => {
     const [interest, setInterest] = useState()
 
     const [seeapr, setSeeApr] = useState(false);
-    const visibility = seeapr ? 'visible' : 'hidden';
+    const display = seeapr ? 'block' : 'none';
     const handleApr = nextApr => { setSeeApr(nextApr)}
 
     function creditAPRCalculator(){
@@ -30,15 +30,14 @@ const AprCalculator = () => {
                     width = {68}
                     height = {40}
                     handleDiameter = {40}/>
-                        <div style={{visibility}}>
+                        <div style={{display}}>
                             <h1>APR Calculator (30 days)</h1>
                             <div>
-                                <span className='aprForm'>APR %</span>
+                                <p className='aprForm'>APR %</p>
                                 <input  className='aprForm'type='number' placeholder='enter APR' onChange={e => setApr(e.target.value)}/>
-                                <span className='aprForm'>Balance</span>
+                                <p className='aprForm'>Balance</p>
                                 <input  className='aprForm'type='number' placeholder='enter balance' onChange={e => setBalance(e.target.value)}/>
                             </div>
-                            <br/>
                             <br/>
                             <div>
                                 <button onClick={() => creditAPRCalculator(apr, balance)}>Submit</button>

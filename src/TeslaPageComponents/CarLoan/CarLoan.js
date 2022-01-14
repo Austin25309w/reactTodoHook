@@ -10,7 +10,7 @@ const CarLoan = () => {
     const[carLoan, setCarLoan] = useState()
 
     const [seecarloan, setseeCarloan] = useState(false);
-    const visibility = seecarloan ? 'visible' : 'hidden';
+    const display = seecarloan ? 'block' : 'none';
     const handleCarloan = nextChecked => { setseeCarloan(nextChecked)}
 
 
@@ -41,14 +41,14 @@ const CarLoan = () => {
 
     return (
     <div className='car_loan'>
-        <h2>Toggle to {`${seecarloan?'Hide':'Show'}` } CARLOAN Calculator</h2>
+        <h2>Toggle to {`${seecarloan?'Hide' :'Show'}` } CARLOAN Calculator</h2>
             <ReactSwitch 
                 onChange={handleCarloan} 
                 checked={seecarloan}
                 width = {68}
                 height = {40}
                 handleDiameter = {40}/>
-                    <div style={{visibility}}>
+                    <div style={{display}}>
                     <h1>CarLoan</h1>
                         <form >
                             <div>

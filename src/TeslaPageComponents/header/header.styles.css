@@ -1,25 +1,35 @@
+
+
 .header_container {
-    border: 3px solid black;
     border-radius: 10px;
     position: absolute;
     bottom: 0;
     height: 60px;
     background: #6cf;
     margin: 0.5rem;
-    width: 80%;
-    /* height: 100%; */
-    
-    
+    width: 70%;
+    padding: 1rem;
+    display: block;
+}
+
+
+.headerA {
+    float: left;
 }
 
 .header_container .option {
     text-decoration: none;
     color: dimgray;
     padding: 2rem;
-    
+    /* gap: 3em; */
 }
 
 .option{
     padding: 10px 15px;
     
+}
+
+.bottomTime {
+    width: 25%;
+    float: right;
 }

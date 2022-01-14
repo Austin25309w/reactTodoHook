@@ -1,0 +1,48 @@
+import React, { Component } from 'react';
+import './Time.css';
+
+export default class Time extends Component {
+    constructor(){
+        super()
+        var today = new Date(),
+        date = today.getFullYear() + '-' + (today.getMonth() + 1 + '-' + today.getDate());
+
+        this.state = {
+            currentTime: Date().toLocaleUpperCase(),
+            currentDate: date,
+            time: new Date().toLocaleString()
+        }
+    }
+
+    componentDidMount() {
+        this.intervalID = setInterval(
+            () => this.tick(),
+            1000
+        )
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.intervalID);
+    }
+
+    tick(){
+        let date = new Date()
+        let hours = date.getHours();
+        let ampm = hours >= 12 ? ' pm' : ' am';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        
+        this.setState({
+            time: hours + ':' + new Date().getMinutes().toLocaleString() + ':' + new Date().getSeconds().toLocaleString() + ampm
+        })
+    }
+
+
+    render() {
+        return (
+            <div className='timeA'>
+                <h2>{this.state.time}</h2>
+            </div>
+        )
+    }
+}

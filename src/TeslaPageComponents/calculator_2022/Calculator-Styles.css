@@ -1,7 +1,8 @@
 .calculator-container {
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 400px;
+    height: 100%;
 }
 
 .calculator-grid {
@@ -9,8 +10,10 @@
     /* justify-content: center; */
     grid-template-columns: repeat(4, 6rem);
     grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
-    float: left;
+    /* float: left; */
     width: 50%;
+    height: 100%;
+   
 
 }
 

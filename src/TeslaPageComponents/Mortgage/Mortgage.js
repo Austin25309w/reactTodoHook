@@ -27,6 +27,8 @@ class Mortgage extends React.Component {
 
 export default Mortgage
 
+// https://www.youtube.com/watch?v=nsUSKz1a7tI&t=142s
+
 // P = principle
 // r = R / 12
 // n = 30years fixed  x 12 = 310 
