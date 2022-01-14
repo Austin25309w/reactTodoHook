@@ -9,9 +9,9 @@ const CarLoan = () => {
     const[period, setPeriod] = useState(0)
     const[carLoan, setCarLoan] = useState()
 
-    const [seecarloan, setseeCarloan] = useState(false);
-    const display = seecarloan ? 'block' : 'none';
-    const handleCarloan = nextChecked => { setseeCarloan(nextChecked)}
+    // const [seecarloan, setseeCarloan] = useState(false);
+    // const display = seecarloan ? 'block' : 'none';
+    // const handleCarloan = nextChecked => { setseeCarloan(nextChecked)}
 
 
     function loanCalculation(){
@@ -41,14 +41,15 @@ const CarLoan = () => {
 
     return (
     <div className='car_loan'>
-        <h2>Toggle to {`${seecarloan?'Hide' :'Show'}` } CARLOAN Calculator</h2>
+        {/* <h2>Toggle to {`${seecarloan?'Hide' :'Show'}` } CARLOAN Calculator</h2>
             <ReactSwitch 
                 onChange={handleCarloan} 
                 checked={seecarloan}
                 width = {68}
                 height = {40}
                 handleDiameter = {40}/>
-                    <div style={{display}}>
+                    <div style={{display}}> */}
+
                     <h1>CarLoan</h1>
                         <form >
                             <div>
@@ -69,7 +70,7 @@ const CarLoan = () => {
                             <button onClick={ () =>loanCalculation(amount, interest, period)}>submit </button>
                             <span><h4>Monthly Payments</h4> <h1>${carLoan}</h1></span>
                         </div>
-                    </div>    
+                    {/* </div>     */}
         
         
     </div>

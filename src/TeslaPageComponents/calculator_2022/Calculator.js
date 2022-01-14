@@ -149,14 +149,14 @@ function Calculator() {
 
     return (
         <div className='calculator_container'>
-            <h2>Toggle to {`${seeCal?'Hide' :'Show'}` } Calculator</h2>
+            {/* <h2>Toggle to {`${seeCal?'Hide' :'Show'}` } Calculator</h2>
                         <ReactSwitch 
                             onChange={handleCarloan} 
                             checked={seeCal}
                             width = {68}
                             height = {40}
                             handleDiameter = {40}/>
-                            <div style={{display}}>
+                            <div style={{display}}> */}
 
                             <div className="calculator-grid">
                                 <div className="output">
@@ -186,15 +186,15 @@ function Calculator() {
                                         onClick= { ()=> dispatch({type: ACTIONS.EVALUATE })}
                                     >=</button>
                                 </div>
-                            </div>
+                            {/* </div> */}
 
         {/* carloan calculator */}
-        <div className='carloan_calculator'>
+        {/* <div className='carloan_calculator'>
                     <CarLoan />
         </div>
         <div className='carloan_calculator'>
                     <AprCalculator />
-        </div>
+        </div> */}
             
             
             
