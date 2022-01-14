@@ -1,6 +1,11 @@
 
 
 .header_container {
+   
+}
+
+
+.headerA {
     border-radius: 10px;
     position: absolute;
     bottom: 0;
@@ -12,14 +17,10 @@
     display: block;
 }
 
-
-.headerA {
-    float: left;
-}
-
 .header_container .option {
     text-decoration: none;
     color: dimgray;
+    font-weight: bold;
     padding: 2rem;
     /* gap: 3em; */
 }
@@ -30,8 +31,10 @@
 }
 
 .bottomTime {
-    width: 25%;
-    float: right;
+    position: absolute;
+    width: 20%;
+    right:0;
+    bottom: 0;
 }
 /* ------------------------------- */
 

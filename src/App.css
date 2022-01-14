@@ -4,7 +4,10 @@
 .App {
   margin: 2rem;
   /* text-align: center; */
+  font-family: "Open Sans Condensed";
+  font-stretch: extra-expanded;
 }
+
 
 .App-logo {
   height: 40vmin;

@@ -9,7 +9,7 @@ const Header = () => (
         <div className='headerA'>
                 <Link to='/reactTodoHook/' className='option'>HOME </Link>
                     <div className='dropup'>
-                        <Link className="option" to='/reactTodoHook/calculator'>
+                        <Link className="option" >
     
                         <div className='dropup-content'>
                             <Link to='/reactTodoHook/calculator'>Calculator</Link>
