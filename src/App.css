@@ -6,7 +6,26 @@
   /* text-align: center; */
   font-family: "Open Sans Condensed";
   font-stretch: extra-expanded;
+  font-size: 1.4rem;
 }
+
+.calculatorInputs {
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.calculatorButtons {
+  width: 200px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: grey;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
 
 
 .App-logo {

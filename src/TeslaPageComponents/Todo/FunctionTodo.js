@@ -77,8 +77,8 @@ export default function FunctionTodo() {
                                 /> 
                 <div>{todos.filter(todo => !todo.complete).length} left to do </div>
             </div>
-            <UseReducerCounter/>
-             <UseReducerTodo/>
+            {/* <UseReducerCounter/> */}
+             {/* <UseReducerTodo/> */}
         </div>
     )
 }

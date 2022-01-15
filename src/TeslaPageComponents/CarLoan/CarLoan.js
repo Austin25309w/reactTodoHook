@@ -54,21 +54,21 @@ const CarLoan = () => {
                         <form >
                             <div>
                                 <p >Loan Amount</p>
-                                <input type='number' placeholder='amount' onChange={ e => setAmount(e.target.value)}/>
+                                <input className='calculatorInputs' type='number' placeholder='amount' onChange={ e => setAmount(e.target.value)}/>
                             </div>
                             <div>
                                 <p>Interest rate (%)</p>
-                                <input type='number' placeholder='rate' onChange={ e => setInterest(e.target.value)}/>
+                                <input className='calculatorInputs' type='number' placeholder='rate' onChange={ e => setInterest(e.target.value)}/>
                             </div>
                             <div>
                                 <p>Loan Period (months)</p>
-                                <input type='number' placeholder='month' onChange={ e => setPeriod(e.target.value)}/>
+                                <input className='calculatorInputs' type='number' placeholder='month' onChange={ e => setPeriod(e.target.value)}/>
                             </div>
                         </form>
                         <br/>
                         <div>
-                            <button onClick={ () =>loanCalculation(amount, interest, period)}>submit </button>
-                            <span><h4>Monthly Payments</h4> <h1>${carLoan}</h1></span>
+                            <button className='calculatorButtons' onClick={ () =>loanCalculation(amount, interest, period)}>submit </button>
+                            <span><h4>Monthly Payments</h4> <h1>{`${carLoan === undefined ? '' : '$' + carLoan }`}</h1></span>
                         </div>
                     {/* </div>     */}
         

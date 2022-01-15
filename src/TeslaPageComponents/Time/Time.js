@@ -31,9 +31,11 @@ export default class Time extends Component {
         let ampm = hours >= 12 ? ' pm' : ' am';
         hours = hours % 12;
         hours = hours ? hours : 12;
+        let minutes = date.getMinutes() <= 9 ? '0' + date.getMinutes() : date.getMinutes() ;
+        let seconds = date.getSeconds() <= 9 ? '0' + date.getSeconds() : date.getSeconds() ;
         
         this.setState({
-            time: hours + ':' + new Date().getMinutes().toLocaleString() + ':' + new Date().getSeconds().toLocaleString() + ampm
+            time: hours + ':' + minutes + ':' + seconds + ampm
         })
     }
 

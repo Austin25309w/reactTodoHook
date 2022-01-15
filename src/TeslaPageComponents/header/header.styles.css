@@ -21,7 +21,7 @@
     text-decoration: none;
     color: dimgray;
     font-weight: bold;
-    padding: 2rem;
+    padding: 1.8rem;
     /* gap: 3em; */
 }
 
@@ -76,6 +76,7 @@
 
 .dropup:hover .dropup-content{
     display:block;
+    
 }
 
 .dropup:hover .dropbtn{

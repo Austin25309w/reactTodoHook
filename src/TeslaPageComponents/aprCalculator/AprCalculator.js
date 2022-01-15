@@ -1,5 +1,5 @@
 import {React, useState} from 'react'
-import ReactSwitch from 'react-switch';
+// import ReactSwitch from 'react-switch';
 import './aprCalculator.css'
 
 const AprCalculator = () => {
@@ -34,15 +34,15 @@ const AprCalculator = () => {
                             <h1>APR Calculator (30 days)</h1>
                             <div>
                                 <p className='aprForm'>APR %</p>
-                                <input  className='aprForm'type='number' placeholder='enter APR' onChange={e => setApr(e.target.value)}/>
+                                <input  className='calculatorInputs'type='number' placeholder='enter APR' onChange={e => setApr(e.target.value)}/>
                                 <p className='aprForm'>Balance</p>
-                                <input  className='aprForm'type='number' placeholder='enter balance' onChange={e => setBalance(e.target.value)}/>
+                                <input  className='calculatorInputs'type='number' placeholder='enter balance' onChange={e => setBalance(e.target.value)}/>
                             </div>
                             <br/>
                             <div>
-                                <button onClick={() => creditAPRCalculator(apr, balance)}>Submit</button>
+                                <button className='calculatorButtons' onClick={() => creditAPRCalculator(apr, balance)}>Submit</button>
                                 <h3>Your interested for 30 days is:</h3>
-                                <h1> ${interest}</h1>
+                                <h1> {`${interest === undefined ? '' : '$' + interest  }`}</h1>
                             </div>
             {/* </div>   */}
         </div>
