@@ -36,6 +36,13 @@
     right:0;
     bottom: 0;
 }
+
+.resizeWindow {
+    position: absolute;
+    width: 30%;
+    right:0;
+    top:0;
+}
 /* ------------------------------- */
 
 .dropbtn{
