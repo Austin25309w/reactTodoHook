@@ -32,16 +32,26 @@
 
 .bottomTime {
     position: absolute;
-    width: 20%;
+    width: 30%;
     right:0;
     bottom: 0;
+    text-align: right;
+    padding:1rem;
 }
+
+.bottomTime span {
+    width: 40%;
+    display: inline-block;
+}
+
+
 
 .resizeWindow {
     position: absolute;
     width: 30%;
     right:0;
     top:0;
+    text-align: right;
 }
 /* ------------------------------- */
 

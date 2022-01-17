@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import './header.styles.css'
 import Time from '../Time/Time';
 import Resizewindow from '../../functionComponents/resizeWindowWIdth/Resizewindow';
+import MiniWeather from '../Weather/MiniWeather';
+
 
 const Header = () => (
     <div className='header_container'>
@@ -27,7 +29,8 @@ const Header = () => (
         </div>
 
         <div className='bottomTime'>
-                <Time/>   
+            <span><MiniWeather/> </span> 
+            <span><Time/> </span>
         </div>  
         <div className='resizeWindow'><Resizewindow/></div>
     </div>

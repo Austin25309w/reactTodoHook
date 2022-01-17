@@ -21,7 +21,7 @@ export default function Resizewindow() {
 
     return (
         <div>
-            <p>Resolution: {windowWidth}px X {windowHeight}px  </p> 
+            <p>{windowWidth} X {windowHeight}  </p> 
             
         </div>
     )

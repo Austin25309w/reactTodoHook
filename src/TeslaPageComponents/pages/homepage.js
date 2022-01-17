@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Weather from '../Weather/Weather';
 
 class HomePage extends React.Component {
     constructor(){
@@ -37,7 +38,7 @@ class HomePage extends React.Component {
             <div>
                 <h1> Home Page</h1>
                 <h2>{this.state.currentDate} { this.state.time} </h2>
-                <h2>Weather</h2>
+                <Weather/>
                 <h2> google bookmark</h2>
             </div>
         )

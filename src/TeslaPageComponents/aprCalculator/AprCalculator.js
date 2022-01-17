@@ -1,4 +1,4 @@
-import {React, useState} from 'react'
+import React, {useState, useEffect} from 'react'
 // import ReactSwitch from 'react-switch';
 import './aprCalculator.css'
 
@@ -21,6 +21,11 @@ const AprCalculator = () => {
         // let avgDailyBalance = (daily balance * days + daily balance * days) /30
         setInterest(interestCharge.toFixed(2))
     }
+
+    useEffect(() => creditAPRCalculator(apr, balance));
+
+    
+
     return (
         <div>
             {/* <h2>Toggle to {`${seeapr?'Hide':'Show'}` } APR Calculator</h2>
@@ -40,9 +45,9 @@ const AprCalculator = () => {
                             </div>
                             <br/>
                             <div>
-                                <button className='calculatorButtons' onClick={() => creditAPRCalculator(apr, balance)}>Submit</button>
+                                {/* <button className='calculatorButtons' onClick={() => creditAPRCalculator(apr, balance)}>Submit</button> */}
                                 <h3>Your interested for 30 days is:</h3>
-                                <h1> {`${interest === undefined ? '' : '$' + interest  }`}</h1>
+                                <h1> {`${interest === 0 ? '' : '$' + interest  }`}</h1>
                             </div>
             {/* </div>   */}
         </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Time.css';
 
+
 export default class Time extends Component {
     constructor(){
         super()
@@ -43,7 +44,8 @@ export default class Time extends Component {
     render() {
         return (
             <div className='timeA'>
-                <h2>{this.state.time}</h2>
+                <p> {this.state.time}</p>
+                
             </div>
         )
     }
