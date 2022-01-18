@@ -12,7 +12,7 @@
     height: 60px;
     background: #6cf;
     margin: 0.5rem;
-    width: 70%;
+    width: 65%;
     padding: 1rem;
     display: block;
 }
@@ -32,16 +32,17 @@
 
 .bottomTime {
     position: absolute;
-    width: 30%;
+    width: 35%;
     right:0;
     bottom: 0;
-    text-align: right;
+    
     padding:1rem;
 }
 
 .bottomTime span {
-    width: 40%;
+    width: 50%;
     display: inline-block;
+    text-align: right;
 }
 
 

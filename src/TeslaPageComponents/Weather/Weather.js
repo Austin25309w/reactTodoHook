@@ -25,11 +25,16 @@ export default function Weather() {
 
     const submitHandler = () => {
         setState(getState);
+        
     };
 
     const kelvinToFarenheit = (k) => {
         return Math.round(((((k - 273.15) * 9)/5) +32 ));
     }
+
+    useEffect( () => {
+        setState(getState)
+    } )
 
 
 
@@ -37,8 +42,8 @@ export default function Weather() {
         <div>
             <h1>Weather</h1>
             <div>
-                <input type="text" onChange={inputHandler} value= {getState}/>
-                <button onClick={submitHandler}>Search</button>
+                <input className='calculatorInputs' type="text" onChange={inputHandler} value= {getState}/>
+                {/* <button onClick={submitHandler}>Search</button> */}
             </div>
 
             <div>

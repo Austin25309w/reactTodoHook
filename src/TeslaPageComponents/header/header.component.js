@@ -29,8 +29,8 @@ const Header = () => (
         </div>
 
         <div className='bottomTime'>
-            <span><MiniWeather/> </span> 
-            <span><Time/> </span>
+            <span><MiniWeather/> </span>
+            <span><Time/></span>
         </div>  
         <div className='resizeWindow'><Resizewindow/></div>
     </div>
