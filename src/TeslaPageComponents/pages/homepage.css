@@ -1,0 +1,14 @@
+.home {
+    text-align: center;
+}
+
+.home p {
+    font-size: 5rem;
+    font-weight: bolder;
+    font-family:fantasy;
+}
+
+.home img {
+    width:7rem;
+    padding-top: 2rem;
+}

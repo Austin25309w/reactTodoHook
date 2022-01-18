@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Weather from '../Weather/Weather';
+import './homepage.css'
 
 class HomePage extends React.Component {
     constructor(){
@@ -70,11 +71,11 @@ class HomePage extends React.Component {
     render(){
         const date = new Date();
         return (
-            <div>
-                <h1> Today is...{ this.switchDay()} </h1>
+            <div className='home'>
+                <p> Today is...{ this.switchDay()} </p>
                 <h2>{this.getCalendarDate() + ' ' + date.getDate() + ', ' + date.getFullYear()}</h2>
                 <Weather/>
-                <h2> google bookmark</h2>
+                {/* <h2> google bookmark</h2> */}
             </div>
         )
     }

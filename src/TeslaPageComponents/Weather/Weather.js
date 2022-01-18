@@ -5,8 +5,8 @@ export default function Weather() {
 
     // States
     const [apiData, setApiData] = useState({});
-    const [getState, setGetState] = useState('hayward');
-    const [state, setState] = useState('hayward');
+    const [getState, setGetState] = useState('Macau');
+    const [state, setState] = useState('Macau');
 
         // apiKey and url
         // const apiKey = process.env.REACT_APP_API_KEY;
@@ -40,7 +40,6 @@ export default function Weather() {
 
     return (
         <div>
-            <h1>Weather</h1>
             <div>
                 <input className='calculatorInputs' type="text" onChange={inputHandler} value= {getState}/>
                 {/* <button onClick={submitHandler}>Search</button> */}
@@ -54,7 +53,7 @@ export default function Weather() {
                                 alt = "weather status icon"
                             />
                             <p>{kelvinToFarenheit(apiData.main.temp)}&deg; F</p>
-                            <strong>{apiData.name}</strong>
+                            <p>{apiData.name}</p>
                             {/* <strong>{kelvinToFarenheit(apiData.main.temp_min)}&deg: C</strong>
                             <strong>{kelvinToFarenheit(apiData.main.temp_max)}&deg: C</strong>
                             <strong>{apiData.weather[0].main}</strong> */}
