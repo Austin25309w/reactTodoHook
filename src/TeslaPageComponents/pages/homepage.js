@@ -73,7 +73,7 @@ class HomePage extends React.Component {
         return (
             <div className='home'>
                 <p> Today is...{ this.switchDay()} </p>
-                <h2>{this.getCalendarDate() + ' ' + date.getDate() + ', ' + date.getFullYear()}</h2>
+                <h3>{this.getCalendarDate() + ' ' + date.getDate() + ', ' + date.getFullYear()}</h3>
                 <Weather/>
                 {/* <h2> google bookmark</h2> */}
             </div>

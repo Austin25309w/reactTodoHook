@@ -46,7 +46,7 @@ export default function Weather() {
             </div>
 
             <div>
-                <div>
+                <div className='weatherapi'>
                     {apiData.main ? (
                         <div>
                             <img src={`http://openweathermap.org/img/w/${apiData.weather[0].icon}.png`}

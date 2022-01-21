@@ -1,3 +1,7 @@
 .lastupdate {
     font-size: x-small;
 }
+
+.weatherapi p {
+    margin: 0;
+}

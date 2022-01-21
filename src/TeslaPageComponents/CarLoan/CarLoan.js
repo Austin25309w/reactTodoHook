@@ -9,6 +9,9 @@ const CarLoan = () => {
     const[period, setPeriod] = useState(0)
     const[carLoan, setCarLoan] = useState()
 
+    const[toRight, setToRight] = useState()
+    const[left, setLeft] = useState()
+
     // const [seecarloan, setseeCarloan] = useState(false);
     // const display = seecarloan ? 'block' : 'none';
     // const handleCarloan = nextChecked => { setseeCarloan(nextChecked)}
@@ -71,7 +74,14 @@ const CarLoan = () => {
                             <span><h4>Monthly Payments</h4> <h1>{`${carLoan === undefined ? '' : '$' + carLoan }`}</h1></span>
                         </div>
                     {/* </div>     */}
-        
+        <div className='blackbox'>
+               <h1>black</h1>        
+        </div>
+        <div>
+            <button onClick={ ()=> setToRight( style={right:right}) }>去右</button>
+            <button>去左</button>  
+        </div>
+                  
         
     </div>
     )
