@@ -78,7 +78,7 @@ const CarLoan = () => {
                <h1>black</h1>        
         </div>
         <div>
-            <button onClick={ ()=> setToRight( style={right:right}) }>去右</button>
+            {/* <button onClick={ ()=> setToRight( style={right:right}) }>去右</button> */}
             <button>去左</button>  
         </div>
                   

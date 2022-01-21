@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './TeslaPageComponents/header/header.component';
 import AprCalculator from './TeslaPageComponents/aprCalculator/AprCalculator';
 import CarLoan from './TeslaPageComponents/CarLoan/CarLoan';
+import EvMile from './TeslaPageComponents/EvMile/EvMile';
 import './App.css'
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path= '/reactTodoHook/aprcalculator' component = { AprCalculator}/>
             <Route path= '/reactTodoHook/carloancalculator' component = { CarLoan}/>
             <Route path = '/reactTodoHook/todo' component ={ FunctionTodo }/>
+            <Route path = '/reactTodoHook/evmiles' component ={ EvMile }/>
         </Switch>
         <Header/>
         </div>
