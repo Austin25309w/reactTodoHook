@@ -7,6 +7,8 @@ const AprCalculator = () => {
     const [balance, setBalance] = useState(0);
     const [interest, setInterest] = useState()
 
+    const [toRight, setToRight] = useState('box')
+
     // const [seeapr, setSeeApr] = useState(false);
     // const display = seeapr ? 'block' : 'none';
     // const handleApr = nextApr => { setSeeApr(nextApr)}
@@ -24,6 +26,11 @@ const AprCalculator = () => {
 
     useEffect(() => creditAPRCalculator(apr, balance));
 
+    const changeStyle = () => {
+        setToRight('box2')
+        
+    }
+
     
 
     return (
@@ -36,7 +43,8 @@ const AprCalculator = () => {
                     height = {40}
                     handleDiameter = {40}/>
                         <div style={{display}}> */}
-                            <h1>APR Calculator (30 days)</h1>
+                        <div className={toRight}> 
+                        <h1>APR Calculator (30 days)</h1>
                             <div>
                                 <p className='aprForm'>APR %</p>
                                 <input  className='calculatorInputs'type='number' placeholder='enter APR' onChange={e => setApr(e.target.value)}/>
@@ -49,6 +57,9 @@ const AprCalculator = () => {
                                 <h3>Your interested for 30 days is:</h3>
                                 <h1> {`${interest === 0 ? '' : '$' + interest  }`}</h1>
                             </div>
+                            <button className='moveButton' onClick={changeStyle}>move to passenger ></button>
+                        </div>
+                           
             {/* </div>   */}
         </div>
     )

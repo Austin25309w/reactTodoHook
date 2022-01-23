@@ -54,4 +54,24 @@
     font-size: 2.5rem;
 }
 
+.calbox {
+    width: 220px;
+    transition:2s;
+    -webkit-transition:3s;
+    -moz-transition:3s;
+    position:absolute;
+    right:calc(100% - 15rem);
+}
+
+
+.calbox2{
+    width: 220px;
+    transition:2s;
+    -webkit-transition:3s;
+    -moz-transition:3s;
+    position:absolute;
+    right: 12rem;
+
+}
+
 

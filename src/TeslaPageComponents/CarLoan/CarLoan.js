@@ -1,21 +1,22 @@
-import {React, useState} from 'react';
+import {React, useState, useEffect} from 'react';
 import './carLoan.css'
 import ReactSwitch from 'react-switch';
 
 
 const CarLoan = () => {
-    const[amount, setAmount] = useState(0)
-    const[interest, setInterest] = useState(0)
-    const[period, setPeriod] = useState(0)
-    const[carLoan, setCarLoan] = useState()
+    const[amount, setAmount] = useState(0);
+    const[interest, setInterest] = useState(0);
+    const[period, setPeriod] = useState(0);
+    const[carLoan, setCarLoan] = useState();
 
-    const[toRight, setToRight] = useState()
-    const[left, setLeft] = useState()
+    const[toRight, setToRight] = useState('box');
+    const[isToggle, setIsToggle] = useState(false);
+
+    const[com, setCom] = useState(0)
 
     // const [seecarloan, setseeCarloan] = useState(false);
     // const display = seecarloan ? 'block' : 'none';
     // const handleCarloan = nextChecked => { setseeCarloan(nextChecked)}
-
 
     function loanCalculation(){
             let decimalRate = interest / 100;
@@ -29,18 +30,26 @@ const CarLoan = () => {
             setCarLoan(finalAns.toFixed(2));
     }
 
-    function addComma(x){
-        let comma = x.toString().split(".");
-        comma[0] = comma[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        return comma.join('.') 
+
+
+    function addComma(){
+        // let comma = com.toString().split(".");
+        // comma[0] = comma[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // return comma.join('.')
+        let a = com.toLocaleString('en')
+        setCom(a) 
     }
 
-    function totalGasPriceCalculator(){
+    useEffect(() => addComma(com))
 
+    const changeStyle = () => {
+        setToRight('box2')
     }
 
-
-    // 6.74%, 36mo, $10,000 / 311.11
+    const isActive = () => {
+        setIsToggle(!isToggle);
+        console.log('clicked toggle')
+    }
 
     return (
     <div className='car_loan'>
@@ -52,35 +61,38 @@ const CarLoan = () => {
                 height = {40}
                 handleDiameter = {40}/>
                     <div style={{display}}> */}
-
+                <div className={toRight }>
                     <h1>CarLoan</h1>
-                        <form >
+                            <form >
+                                <div>
+                                    <p >Loan Amount</p>
+                                    <input className='calculatorInputs' type='text' placeholder='amount' onChange={ e =>{ setCom(e.target.value); setAmount(e.target.value);  }}/>
+                                </div>
+                                <div>
+                                    <p>Interest rate (%)</p>
+                                    <input className='calculatorInputs' type='number' placeholder='rate' onChange={ e => setInterest(e.target.value)}/>
+                                </div>
+                                <div>
+                                    <p>Loan Period (months)</p>
+                                    <input className='calculatorInputs' type='number' placeholder='month' onChange={ e => setPeriod(e.target.value)}/>
+                                </div>
+                            </form>
+                            <br/>
                             <div>
-                                <p >Loan Amount</p>
-                                <input className='calculatorInputs' type='number' placeholder='amount' onChange={ e => setAmount(e.target.value)}/>
+                                <button className='calculatorButtons' onClick={ () =>loanCalculation(amount, interest, period)}>submit </button>
+                                <span><h4>Monthly Payments</h4> <h1>{`${carLoan === undefined ? '' : '$' + carLoan  }`}</h1></span>
+                                <div>
+            <button className='moveButton' onClick={changeStyle}>move to passenger ></button>
+            
+        </div>
                             </div>
-                            <div>
-                                <p>Interest rate (%)</p>
-                                <input className='calculatorInputs' type='number' placeholder='rate' onChange={ e => setInterest(e.target.value)}/>
-                            </div>
-                            <div>
-                                <p>Loan Period (months)</p>
-                                <input className='calculatorInputs' type='number' placeholder='month' onChange={ e => setPeriod(e.target.value)}/>
-                            </div>
-                        </form>
-                        <br/>
-                        <div>
-                            <button className='calculatorButtons' onClick={ () =>loanCalculation(amount, interest, period)}>submit </button>
-                            <span><h4>Monthly Payments</h4> <h1>{`${carLoan === undefined ? '' : '$' + carLoan }`}</h1></span>
-                        </div>
+                </div>
+                   
                     {/* </div>     */}
-        <div className='blackbox'>
+        {/* <div className={toRight}>
                <h1>black</h1>        
-        </div>
-        <div>
-            {/* <button onClick={ ()=> setToRight( style={right:right}) }>去右</button> */}
-            <button>去左</button>  
-        </div>
+        </div> */}
+
                   
         
     </div>
@@ -98,3 +110,8 @@ export default CarLoan
 // 6. use 1 to divide 1.16 = 0.86
 // 7. subtract this number from 1 # 1 - 0.86 = 0.14
 // 8. divide the number step to the number step 7 # 62.5 / 0.14 = 446.42
+
+
+    // function totalGasPriceCalculator(){}
+
+    // function stockPrice {}
