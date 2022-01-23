@@ -147,10 +147,10 @@ function Calculator() {
     const display = seeCal ? 'block' : 'none';
     const handleCarloan = nextChecked => { setseeCal(nextChecked)}
 
-    const [toRight, setToRight] = useState('calbox')
+    const [toRight, setToRight] = useState(false)
 
     const changeStyle = () => {
-        setToRight('calbox2')
+        setToRight(!toRight)
     }
 
     return (
@@ -163,7 +163,7 @@ function Calculator() {
                             height = {40}
                             handleDiameter = {40}/>
                             <div style={{display}}> */}
-                            <div className={toRight}>
+                            <div className={toRight ? 'calbox2': 'calbox'}>
                                 <div className="calculator-grid">
                                     <div className="output">
                                         <div className="previous-operand">{formatOperand(previousOperand)}{operation}</div>

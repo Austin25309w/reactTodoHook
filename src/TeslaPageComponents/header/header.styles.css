@@ -51,10 +51,12 @@
 
 .resizeWindow {
     position: absolute;
-    width: 30%;
-    right:0;
+    width: 100%;
+    /* right:0.5; */
     top:0;
-    text-align: right;
+    text-align: center;
+    font-size: x-small;
+
 }
 /* ------------------------------- */
 

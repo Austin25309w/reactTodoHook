@@ -20,7 +20,7 @@ export default function Resizewindow() {
     })
 
     return (
-        <div>
+        <div className='resizeWindow'>
             <p>{windowWidth} X {windowHeight}  </p> 
             
         </div>

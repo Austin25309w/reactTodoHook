@@ -25,6 +25,8 @@ const Header = () => (
                     </div>
                 <Link className='option' to='/reactTodoHook/todo'>
                     TODO </Link>
+                    <Link className='option' to='/reactTodoHook/stocks'>
+                STOCKS </Link>
                 <Link className='option' to='/reactTodoHook/expensemanager'>
                 G-SUITE </Link>
         </div>

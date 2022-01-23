@@ -9,8 +9,8 @@ const CarLoan = () => {
     const[period, setPeriod] = useState(0);
     const[carLoan, setCarLoan] = useState();
 
-    const[toRight, setToRight] = useState('box');
-    const[isToggle, setIsToggle] = useState(false);
+    const[toRight, setToRight] = useState(false);
+ 
 
     const[com, setCom] = useState(0)
 
@@ -43,13 +43,9 @@ const CarLoan = () => {
     useEffect(() => addComma(com))
 
     const changeStyle = () => {
-        setToRight('box2')
+        setToRight(!toRight)
     }
 
-    const isActive = () => {
-        setIsToggle(!isToggle);
-        console.log('clicked toggle')
-    }
 
     return (
     <div className='car_loan'>
@@ -61,7 +57,7 @@ const CarLoan = () => {
                 height = {40}
                 handleDiameter = {40}/>
                     <div style={{display}}> */}
-                <div className={toRight }>
+                <div className={toRight ? 'box2' : 'box' }>
                     <h1>CarLoan</h1>
                             <form >
                                 <div>

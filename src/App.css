@@ -38,13 +38,13 @@
   border: none;
   color: white;
   font-size: 1rem;
-  align-items: center;
   justify-content: center;
 }
 
 .moveButton:hover{
   background-color: blue;
   transform: scale(1.2);
+  
 }
 
 
