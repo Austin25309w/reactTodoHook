@@ -77,6 +77,8 @@
 }
 /* move to passenger property */
 
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 30s linear;
@@ -107,3 +109,17 @@
   }
 }
 
+
+/* mobile settings */
+
+@media screen and (max-width: 450px) {
+  .App {
+    margin: 0;
+  }
+  body {
+    background: linear-gradient(to left, #00AAFF, #00FF6C);
+  }
+
+
+
+}
