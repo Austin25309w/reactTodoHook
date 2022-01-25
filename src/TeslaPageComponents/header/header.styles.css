@@ -1,10 +1,5 @@
 
 
-.header_container {
-   
-}
-
-
 .headerA {
     border-radius: 10px;
     position: absolute;
@@ -119,6 +114,7 @@
         position: initial;
         width: 100%;
         margin: 0;
+        bottom: 0;
       }
     
       .bottomTime {
@@ -147,4 +143,9 @@
         text-align: right;
         display: block;
       }
+      .dropup-content {
+          min-width: 100%;
+          position: unset;
+      }
+      /* .dropup */
 }

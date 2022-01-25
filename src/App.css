@@ -119,7 +119,17 @@
   body {
     background: linear-gradient(to left, #00AAFF, #00FF6C);
   }
-
+  .box {
+    position: unset;
+    text-align: center;
+    width: 100%;
+  }
+  .moveButton{
+    display: none;
+  }
+  .calculatorButtons{
+    text-align: center;
+  }
 
 
 }

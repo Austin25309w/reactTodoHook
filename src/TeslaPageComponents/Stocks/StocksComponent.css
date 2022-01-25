@@ -1,0 +1,9 @@
+.stockImage {
+    width: 400px;
+}
+
+@media screen and (max-width: 450px) {
+    .stockImage{
+        width: 100%;
+    }
+}
