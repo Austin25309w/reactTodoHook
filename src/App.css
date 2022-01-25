@@ -24,6 +24,7 @@
   border: none;
   color: white;
   font-size: 1.5rem;
+
 }
 
 .calculatorButtons:hover {
@@ -32,17 +33,17 @@
 
 .moveButton {
   width: 200px;
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
-  background-color: lightskyblue;
-  border: none;
-  color: white;
+  background-color: transparent;
+  border: 1px solid blue;
+  color: blue;
   font-size: 1rem;
   justify-content: center;
+  margin: 1rem;
 }
 
 .moveButton:hover{
-  background-color: blue;
   transform: scale(1.2);
   
 }

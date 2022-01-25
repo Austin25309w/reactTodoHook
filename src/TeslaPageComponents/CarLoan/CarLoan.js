@@ -78,7 +78,7 @@ const CarLoan = () => {
                                 <button className='calculatorButtons' onClick={ () =>loanCalculation(amount, interest, period)}>submit </button>
                                 <span><h4>Monthly Payments</h4> <h1>{`${carLoan === undefined ? '' : '$' + carLoan  }`}</h1></span>
                                 <div>
-            <button className='moveButton' onClick={changeStyle}>move to passenger ></button>
+            <button className='moveButton' onClick={changeStyle}>{toRight ? '< Driver <': '> Passenger >'}</button>
             
         </div>
                             </div>

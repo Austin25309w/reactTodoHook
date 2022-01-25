@@ -22,6 +22,7 @@ function App() {
             <Route path = '/reactTodoHook/todo' component ={ FunctionTodo }/>
             <Route path = '/reactTodoHook/evmiles' component ={ EvMile }/>
             <Route path = '/reactTodoHook/stocks' component ={ StocksComponent }/>
+            
         </Switch>
         <Header/>
         </div>

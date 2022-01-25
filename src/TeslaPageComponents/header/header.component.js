@@ -17,7 +17,7 @@ const Header = () => (
                         <div className='dropup-content'>
                             <Link to='/reactTodoHook/calculator'>Calculator</Link>
                             <Link to='/reactTodoHook/aprcalculator'>APR Cal</Link>
-                            <Link to='/reactTodoHook/carloancalculator'>Car Loan</Link>
+                            <Link to='/reactTodoHook/carloancalculator' >Car Loan</Link>
                             <Link to='/reactTodoHook/evmiles'>EV miles</Link>
                         </div>
 

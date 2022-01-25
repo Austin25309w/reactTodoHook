@@ -57,7 +57,7 @@ const AprCalculator = () => {
                                 <h3>Your interested for 30 days is:</h3>
                                 <h1> {`${interest === 0 ? '' : '$' + interest  }`}</h1>
                             </div>
-                            <button className='moveButton' onClick={changeStyle}>move to passenger</button>
+                            <button className='moveButton' onClick={changeStyle}>{toRight ? '< Driver <': '> Passenger >'}</button>
                         </div>
                            
             {/* </div>   */}

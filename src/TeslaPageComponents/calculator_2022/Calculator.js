@@ -192,7 +192,7 @@ function Calculator() {
                                             onClick= { ()=> dispatch({type: ACTIONS.EVALUATE })}
                                         >=</button>
                                 </div>
-                                <button className='moveButton' onClick={changeStyle}>move to passenger ></button>
+                                <button className='moveButton' onClick={changeStyle}>{toRight ? '< Driver <': '> Passenger >'}</button>
                             </div>
                             
                             {/* </div> */}
