@@ -119,17 +119,24 @@
     
       .bottomTime {
         /* display: none; */
-        right: initial;
-        left:0;
         top: 0;
-        width: 50%;
-        text-align: left;
+        /* width: 30px; */
+        right: 1rem;
         font-size: small;
         position: absolute;
+        height: 0;
       }
 
       .bottomWeather {
-          display: none;
+          left:-1rem;
+          top: 0;
+          position: absolute;
+          font-size: small;
+          height: 0;
+      }
+
+      .resizeWindow p {
+          margin: 0;
       }
     
 

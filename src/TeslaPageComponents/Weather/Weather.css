@@ -5,3 +5,12 @@
 .weatherapi p {
     margin: 0;
 }
+
+.weatherImg {
+    width: 1.5rem;
+}
+
+.miniWeather img{
+    display: inline-block;
+    vertical-align: middle;
+}

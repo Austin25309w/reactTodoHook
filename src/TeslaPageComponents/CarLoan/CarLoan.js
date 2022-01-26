@@ -62,7 +62,7 @@ const CarLoan = () => {
                             <form >
                                 <div>
                                     <p >Loan Amount</p>
-                                    <input className='calculatorInputs' type='text' placeholder='amount' onChange={ e =>{ setCom(e.target.value); setAmount(e.target.value);  }}/>
+                                    <input className='calculatorInputs' type='number' placeholder='amount' onChange={ e =>{ setCom(e.target.value); setAmount(e.target.value);  }}/>
                                 </div>
                                 <div>
                                     <p>Interest rate (%)</p>

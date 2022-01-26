@@ -52,15 +52,15 @@ export default function MiniWeather() {
     }
 
     return (
-        <div>
+        <div >
             {apiData.main ? (
-                <div>
-                    <img src={`http://openweathermap.org/img/w/${apiData.weather[0].icon}.png`}
+                <div className='miniWeather'>
+                    <img className='weatherImg' src={`http://openweathermap.org/img/w/${apiData.weather[0].icon}.png`}
                                 alt = "weather status icon"
                             />
-                            <span>{kelvinToFarenheit(apiData.main.temp)}&deg; F</span>
-                            <span>{apiData.name}</span>
-                            <span className='lastupdate'>Last updated: {timestamp === 0 ? 'now' : timestamp }</span>
+                            <span>{kelvinToFarenheit(apiData.main.temp)}&deg;F</span>
+                            {/* <span> {apiData.name}</span> */}
+                            <span className='lastupdate'> {timestamp === 0 ? 'now' : timestamp }</span>
                             {/* <span>{location}123 </span>  */}
                 </div>
             ): <h1>LOADING</h1>
