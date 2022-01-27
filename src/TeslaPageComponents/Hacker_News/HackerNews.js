@@ -5,13 +5,15 @@ import classNames from 'classnames';
 import './HackerNews.css';
 
 const DEFAULT_QUERY = 'Tesla';
-const DEFAULT_HPP = '100';
+const DEFAULT_HPP = '50';
 
 const PATH_BASE = 'https://hn.algolia.com/api/v1';
 const PATH_SEARCH = '/search';
+const PATH_SEARCH_BY_DATE ='/search_by_date'
 const PARAM_SEARCH = 'query=';
 const PARAM_PAGE = 'page=';
 const PARAM_HPP = 'hitsPerPage=';
+const PARAM_DATE = 'date=2021';
 
 const SORTS = {
   NONE: list => list,
@@ -78,7 +80,7 @@ class HackerNews extends Component {
   fetchSearchTopStories(searchTerm, page = 0) {
     this.setState({ isLoading: true });
 
-    axios(`${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${searchTerm}&${PARAM_PAGE}${page}&${PARAM_HPP}${DEFAULT_HPP}`)
+    axios(`${PATH_BASE}${PATH_SEARCH_BY_DATE}?${PARAM_SEARCH}${searchTerm}&${PARAM_PAGE}${page}&${PARAM_HPP}${DEFAULT_HPP}`)
       .then(result => this.setSearchTopStories(result.data))
       .catch(error => this._isMounted && this.setState({ error }));
   }
@@ -145,11 +147,13 @@ class HackerNews extends Component {
       results[searchKey] &&
       results[searchKey].hits
     ) || [];
-
+    // console.log(Object.keys(list).map(k => list[0].created_at))
+      console.log(Object.keys(list).map(k => list[10]))
     return (
+      
       <div className="page">
         <div className="interactions">
-          <Search className="calculatorInputs"
+          <Search 
             value={searchTerm}
             onChange={this.onSearchChange}
             onSubmit={this.onSearchSubmit}
@@ -186,11 +190,12 @@ const Search = ({
 }) =>
   <form onSubmit={onSubmit}>
     <input
+    className="calculatorInputs"
       type="text"
       value={value}
       onChange={onChange}
     />
-    <button type="submit">
+    <button className='moveButton' type="submit">
       {children}
     </button>
   </form>
@@ -274,7 +279,8 @@ class Table extends Component {
         {reverseSortedList.map(item =>
           <div key={item.objectID} className="table-row">
             <span style={{ width: '40%' }}>
-              <a href={item.url}>{item.title}</a>
+              {/* if item.title is nothing, dismiss it */}
+              <a href={item.url}>{item.title === null ? onDismiss(item.objectID) : item.title }</a>
             </span>
             <span style={{ width: '30%' }}>
               {item.author}
