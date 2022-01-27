@@ -47,8 +47,8 @@ const Header = () => {
                         TODO </Link>
                         <Link onClick={toggleMenu} className='option' to='/reactTodoHook/stocks'>
                     STOCKS </Link>
-                    <Link onClick={toggleMenu} className='option' to='/reactTodoHook/expensemanager'>
-                    G-SUITE </Link>
+                    <Link onClick={toggleMenu} className='option' to='/reactTodoHook/news'>
+                    NEWS </Link>
             </div>
     
             <div className='bottomTime'>

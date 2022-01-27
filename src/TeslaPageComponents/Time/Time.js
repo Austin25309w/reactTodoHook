@@ -44,7 +44,7 @@ export default class Time extends Component {
     render() {
         return (
             <div className='timeA'>
-                <p> {this.state.time}</p>
+                <p className='timeAp'> {this.state.time}</p>
                 
             </div>
         )

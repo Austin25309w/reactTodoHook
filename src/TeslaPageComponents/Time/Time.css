@@ -1,11 +1,6 @@
-.timeA span {
-    margin-top: 15px;
-    display:inline
-}
 
-@media screen and (max-width: 450px) {
-    .timeA p {
-        margin: 0;
-    }
-    
+
+
+p {
+    margin: 0;
 }

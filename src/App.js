@@ -9,6 +9,7 @@ import AprCalculator from './TeslaPageComponents/aprCalculator/AprCalculator';
 import CarLoan from './TeslaPageComponents/CarLoan/CarLoan';
 import EvMile from './TeslaPageComponents/EvMile/EvMile';
 import StocksComponent from './TeslaPageComponents/Stocks/StocksComponent';
+import HackerNews from './TeslaPageComponents/Hacker_News/HackerNews';
 
 
 function App() {
@@ -22,6 +23,8 @@ function App() {
             <Route path = '/reactTodoHook/todo' component ={ FunctionTodo }/>
             <Route path = '/reactTodoHook/evmiles' component ={ EvMile }/>
             <Route path = '/reactTodoHook/stocks' component ={ StocksComponent }/>
+            <Route path = '/reactTodoHook/news' component ={ HackerNews }/>
+
             
         </Switch>
         <Header/>
