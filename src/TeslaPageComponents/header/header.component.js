@@ -30,9 +30,9 @@ const Header = () => {
     return (
     
         <div className='header_container'>
-            <div className= {window.innerWidth < 450 ? menuToggle? 'headerA': 'headerA-hide' : 'headerA'}>
+            <div className= {window.innerWidth < 700 ? menuToggle? 'headerA': 'headerA-hide' : 'headerA'}>
                     <Link onClick={toggleMenu} to='/reactTodoHook/' className='option'>HOME </Link>
-                    {window.innerWidth < 450 ? 
+                    {window.innerWidth < 700 ? 
                         <div className='dropup'>
                         <div onClick={toggleMenu}  className="mobile-option" >
                         

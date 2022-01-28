@@ -1,3 +1,58 @@
 .todo {
-    margin: 2rem;
+    margin: 0.5rem;
   }
+
+
+  .todos > * {
+    margin: 0.2rem;
+  }
+
+  .singleTodo {
+    display: inline-block;
+    align-items: center;
+    /* background-color: white; */
+    padding: 1rem;
+
+  }
+
+  .singleTodo input {
+    position: relative;
+    display: inline-block;
+  }
+
+  .singleTodo button {
+    display: inline-block;
+    /* margin:2rem; */
+    
+  }
+
+  .singleTodo * {
+    margin: 0.2rem;
+  }
+
+  .editButton {
+    display: inline-block;
+  }
+
+
+  .checkboxName {
+    display: inline-block;
+  }
+  .checkboxName p {
+    display: inline-block;
+  }
+  .checkB {
+    width:10px;
+    height:10px;
+    background:white;
+    border-radius:10px;
+    border:2px solid #555;
+    margin: 1rem;
+    display: inline-block;
+  }
+
+
+
+.editInput {
+  width: 5rem;
+}

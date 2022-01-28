@@ -152,6 +152,7 @@ class HackerNews extends Component {
     return (
       
       <div className="page">
+        <h1 style={{margin: '0'}}>News </h1>
         <div className="interactions">
           <Search 
             value={searchTerm}
@@ -211,7 +212,6 @@ class Table extends Component {
     };
 
     this.onSort = this.onSort.bind(this);
-    this.promptMessage = this.promptMessage.bind(this);
   }
 
   onSort(sortKey) {
@@ -219,10 +219,6 @@ class Table extends Component {
     this.setState({ sortKey, isSortReverse });
   }
 
-  promptMessage() {
-    alert('Thank you for using Tesla Dashboard by Austin Wong! see you soon')
-    
-  }
 
   render() {
     const {
@@ -252,7 +248,9 @@ class Table extends Component {
               Title
             </Sort>
           </span>
-          <span style={{ width: '25%' }}>
+          {window.innerWidth < 700 
+          ? '' 
+          :<span style={{ width: '25%' }}>
             <Sort
               sortKey={'AUTHOR'}
               onSort={this.onSort}
@@ -260,7 +258,8 @@ class Table extends Component {
             >
               Author
             </Sort>
-          </span>
+          </span> }
+          
           {/* <span style={{ width: '10%' }}>
             <Sort
               sortKey={'COMMENTS'}
@@ -288,11 +287,15 @@ class Table extends Component {
             <span style={{ width: '75%' }}>
               {/* if item.title is nothing, dismiss it */}
               {/* onClick={ this.promptMessage()} */}
-              <a onClick={ this.promptMessage} target="_blank" className='newsLink' href={item.url}>{item.title === null ? onDismiss(item.objectID) : item.title }</a>
+              <a className='newsLink' href={item.url}>{item.title === null ? onDismiss(item.objectID) : item.title }</a>
             </span>
+            {window.innerWidth < 700 
+            ? '': 
             <span style={{ width: '25%', fontSize: 'small' }}>
               {item.author}
-            </span>
+            </span> 
+            }
+            
             {/* <span style={{ width: '10%' }}>
               {item.num_comments}
             </span>

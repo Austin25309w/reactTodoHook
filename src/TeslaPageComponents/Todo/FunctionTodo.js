@@ -62,12 +62,15 @@ export default function FunctionTodo() {
         <div>
             
             <div className='todo'>
-            <h1>Todo function</h1>
-             <input ref = {todoNameRef} type = "text"/>
-                <button onClick = {handleAddTodo}>Add todo</button>
-                <button onClick = {handleClearTodos}>clear complete</button>
+                <div className='todos'>
+                    <h1>Todo function</h1>
+                    <input ref = {todoNameRef} type = "text"/>
+                    <button  onClick = {handleAddTodo}>Add todo</button>
+                    <button  onClick = {handleClearTodos}>clear complete</button>
+                </div>
                 {/* where the list starts */}
-                <TodoList todos = {todos} 
+                <TodoList  className="singleTodo"
+                        todos = {todos} 
                             toggleTodo={toggleTodo} 
                                 setTodos={setTodos}
                                 todoEditing = {todoEditing}

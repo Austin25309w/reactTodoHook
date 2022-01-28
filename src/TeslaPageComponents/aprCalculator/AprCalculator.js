@@ -22,6 +22,7 @@ const AprCalculator = () => {
         // let interestCharge = 7000 * 30 * 0.0004 = 84
         // let avgDailyBalance = (daily balance * days + daily balance * days) /30
         setInterest(interestCharge.toFixed(2))
+        console.log(interest)
     }
 
     useEffect(() => creditAPRCalculator(apr, balance));
@@ -52,11 +53,14 @@ const AprCalculator = () => {
                                 <input  className='calculatorInputs'type='number' placeholder='enter balance' onChange={e => setBalance(e.target.value)}/>
                             </div>
                             <br/>
+
                             <div>
-                                {/* <button className='calculatorButtons' onClick={() => creditAPRCalculator(apr, balance)}>Submit</button> */}
-                                <h3>Your interested for 30 days is:</h3>
-                                <h1> {`${interest === 0 ? '' : '$' + interest  }`}</h1>
+                            {/* <button className='calculatorButtons' onClick={() => creditAPRCalculator(apr, balance)}>Submit</button> */}
+                            <h3>Your interested for 30 days is:</h3>
+                                <h1> {`${interest === 0.00 ? null : '$' + interest  }`}</h1>
                             </div>
+                            
+                            
                             <button className='moveButton' onClick={changeStyle}>{toRight ? '< Driver <': '> Passenger >'}</button>
                         </div>
                            

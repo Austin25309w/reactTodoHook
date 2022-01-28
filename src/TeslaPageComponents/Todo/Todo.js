@@ -1,4 +1,6 @@
 import React from 'react'
+import './functionComponents.css'
+
 
 export default function Todo({ todo, todos, toggleTodo, setTodos, todoEditing, setTodoEditing, editingText, setEditingText }) {
     function handleTodoClick(){
@@ -24,37 +26,38 @@ export default function Todo({ todo, todos, toggleTodo, setTodos, todoEditing, s
     };
 
     return (
-        <div>
-            <label>
-                <input 
-                    type = "checkbox" 
-                    checked = {todo.complete} 
-                    onChange = {handleTodoClick}
-                />
-                {console.log(todo.text)}
-                {todo.name}
+        <div className='singleTodo'>
+            <label >
+                <div className='checkboxName' >
+                    <input 
+                        type = "checkbox" 
+                        checked = {todo.complete} 
+                        onChange = {handleTodoClick}
+                    />
+                    {console.log(todo.text)}
+                    <p>{todo.name}</p>
+                    
 
-
-                
-                <button onClick = {() => deleteTodo(todo.id) }>delete</button>
-
-
-                {todoEditing === todo.id
-                ? 
-                (<input type='text' 
-                        onChange={(e) => setEditingText(e.target.value)} 
-                        />) 
-                            : (
-                                <div>{null}</div>
-                            )}
-
-                { todoEditing === todo.id 
+                    {todoEditing === todo.id
                     ? 
-                (<button onClick = {() => editTodo(todo.id)}>Submit Edit</button>) 
+                    (<input className='editInput' type='text' 
+                            onChange={(e) => setEditingText(e.target.value)} 
+                            />) 
+                                : (
+                                    <div>{null}</div>
+                                )}
+                </div>
                 
-                : 
-                (<button onClick={() => setTodoEditing(todo.id)}>edit</button>)  }
-                
+                <div className='editButton'>
+
+                    { todoEditing === todo.id 
+                        ? 
+                    <button onClick = {() => editTodo(todo.id)}>Submit Edit</button>
+                    
+                    : 
+                    <button onClick={() => setTodoEditing(todo.id)}>edit</button>  }
+                    <button onClick = {() => deleteTodo(todo.id) }>delete</button>
+                </div>
                 
 
                 
