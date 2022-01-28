@@ -148,7 +148,7 @@ class HackerNews extends Component {
       results[searchKey].hits
     ) || [];
     // console.log(Object.keys(list).map(k => list[0].created_at))
-      console.log(Object.keys(list).map(k => list[10]))
+      // console.log(Object.keys(list).map(k => list[10]))
     return (
       
       <div className="page">
@@ -172,6 +172,7 @@ class HackerNews extends Component {
         }
         <div className="interactions">
           <ButtonWithLoading
+            className='hackButton'
             isLoading={isLoading}
             onClick={() => this.fetchSearchTopStories(searchKey, page + 1)}>
             More
@@ -195,7 +196,7 @@ const Search = ({
       value={value}
       onChange={onChange}
     />
-    <button className='moveButton' type="submit">
+    <button className='hackButton' type="submit">
       {children}
     </button>
   </form>
@@ -210,11 +211,17 @@ class Table extends Component {
     };
 
     this.onSort = this.onSort.bind(this);
+    this.promptMessage = this.promptMessage.bind(this);
   }
 
   onSort(sortKey) {
     const isSortReverse = this.state.sortKey === sortKey && !this.state.isSortReverse;
     this.setState({ sortKey, isSortReverse });
+  }
+
+  promptMessage() {
+    alert('Thank you for using Tesla Dashboard by Austin Wong! see you soon')
+    
   }
 
   render() {
@@ -236,7 +243,7 @@ class Table extends Component {
     return (
       <div className="table">
         <div className="table-header">
-          <span style={{ width: '40%' }}>
+          <span style={{ width: '75%' }}>
             <Sort
               sortKey={'TITLE'}
               onSort={this.onSort}
@@ -245,7 +252,7 @@ class Table extends Component {
               Title
             </Sort>
           </span>
-          <span style={{ width: '30%' }}>
+          <span style={{ width: '25%' }}>
             <Sort
               sortKey={'AUTHOR'}
               onSort={this.onSort}
@@ -254,7 +261,7 @@ class Table extends Component {
               Author
             </Sort>
           </span>
-          <span style={{ width: '10%' }}>
+          {/* <span style={{ width: '10%' }}>
             <Sort
               sortKey={'COMMENTS'}
               onSort={this.onSort}
@@ -271,27 +278,28 @@ class Table extends Component {
             >
               Points
             </Sort>
-          </span>
-          <span style={{ width: '10%' }}>
+          </span> */}
+          <span style={{ width: '25%' }}>
             Archive
           </span>
         </div>
         {reverseSortedList.map(item =>
           <div key={item.objectID} className="table-row">
-            <span style={{ width: '40%' }}>
+            <span style={{ width: '75%' }}>
               {/* if item.title is nothing, dismiss it */}
-              <a href={item.url}>{item.title === null ? onDismiss(item.objectID) : item.title }</a>
+              {/* onClick={ this.promptMessage()} */}
+              <a onClick={ this.promptMessage} target="_blank" className='newsLink' href={item.url}>{item.title === null ? onDismiss(item.objectID) : item.title }</a>
             </span>
-            <span style={{ width: '30%' }}>
+            <span style={{ width: '25%', fontSize: 'small' }}>
               {item.author}
             </span>
-            <span style={{ width: '10%' }}>
+            {/* <span style={{ width: '10%' }}>
               {item.num_comments}
             </span>
             <span style={{ width: '10%' }}>
               {item.points}
-            </span>
-            <span style={{ width: '10%' }}>
+            </span> */}
+            <span style={{ width: '25%' }}>
               <Button
                 onClick={() => onDismiss(item.objectID)}
                 className="button-inline"

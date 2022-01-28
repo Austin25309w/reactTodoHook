@@ -1,0 +1,12 @@
+.mile {
+    font-size: larger;
+}
+
+@media screen and (max-width: 450px) {
+    .ev_component {
+        padding: 2rem;
+    }
+    .ev_component h1 {
+        margin: 0;
+    }
+}

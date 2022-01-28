@@ -2,11 +2,11 @@
 
 .headerA {
     border-radius: 10px;
-    position: absolute;
+    position: fixed;
     height: 60px;
     background: #6cf;
     margin: 0.5rem;
-    width: 65%;
+    width: auto;
     padding: 1rem;
     display: block;
     bottom: 0;
@@ -26,7 +26,7 @@
 }
 
 .bottomTime {
-    position: absolute;
+    position: fixed;
     width: 35%;
     right:0;
     bottom: 0;
@@ -36,7 +36,7 @@
 }
 
 .bottomWeather {
-    position: absolute;
+    position: fixed;
     width: 35%;
     right:0;
     bottom: 0;
@@ -61,7 +61,6 @@
     font-size: x-small;
 
 }
-/* ------------------------------- */
 
 .dropbtn{
     background-color: #3498DB;
@@ -93,8 +92,6 @@
     
 }
 
-
-
 .dropup-content a {
     color: black;
     padding: 12px 16px;
@@ -125,26 +122,24 @@
 @media screen and (max-width: 450px) {
     .headerA {
         height: initial;
-        position: absolute;
+        position: fixed;
         width: 100%;
         margin: 0;
         bottom: -1rem;
+        /* transition: height 2s; */
 
-        transition: opacity 2s linear;  
-        transform:translate(0);
-        opacity: 1;
+        transition-property:all;
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+        
       }
     
       .headerA-hide {
-        height: initial;
-        position: initial;
+        height: 0px;
+        position: fixed;
         width: 100%;
         margin: 0;
         bottom: 0;
-        display: none;
-
-        transform:translate(9999px);
-        opacity: 0;  
       }
     
       .bottomTime {
@@ -185,15 +180,47 @@
       .header_container .option {
           padding: 1rem;
       }
-      .dropup-content {
-          min-width: 100%;
-          position: unset;
+      .mobile-dropup-content {
+        display: block;
+        /* position: absolute; */
+        background-color: #f1f1f1;
+        min-width:160px;
+        bottom: 50px;
+        z-index: 1;
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid #00ff6c;
+        min-width: 100%;
+        position: unset;
+    }
+    .header_container .mobile-option {
+        text-decoration: none;
+        color: dimgray;
+        font-weight: bold;
+        padding: 1.8rem;
+        /* gap: 3em; */
+    }
+    
+    .mobile-option {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        
       }
+
+    .mobile-dropup-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        border-radius: 10px;
+    }
+
       .hamburgerMenu{
           display: block;
           position: fixed;
-          right:0.5rem;
-          bottom: 0.5rem;
+          right:1rem;
+          bottom: 1rem;
 
           padding: 5px;
           border-radius: 10px;

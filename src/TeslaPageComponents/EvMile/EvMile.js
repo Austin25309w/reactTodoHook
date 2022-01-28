@@ -1,4 +1,5 @@
 import React from 'react';
+import './EvMile.css'
 
 
 // const MilageCalculation = (props) => {
@@ -57,7 +58,8 @@ render(){
                         className= "calculatorInputs"/><span> minutes</span>
                     {/* <input className ="btn-add-item" type="submit" value="Submit"/> */}
                     <div>
-                        <h3>Your EV will gain about <span className="mile">{  parseInt(this.milageCalculation(this.state.input)) }</span> miles after charging for {this.state.time} minutes</h3>
+                        <h3>Your EV will gain about <span className="mile">{  `${parseInt(this.milageCalculation(this.state.input)) === 0 ? '___' : '⚡' + parseInt(this.milageCalculation(this.state.input))}`  }</span> miles </h3>
+                        <h3>After charging for<span className='mile'> {`${this.state.time === 0 ? '___' : '⚡' + this.state.time}`} </span>  minutes</h3>
                     </div>
                 </form>
                 <button className='moveButton' onClick={() => this.changeStyle()}>move to passenger ></button>

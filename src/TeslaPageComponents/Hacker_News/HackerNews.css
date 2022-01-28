@@ -1,5 +1,5 @@
 .page {
-  margin: 20px;
+  margin: 4rem 10px;
 }
 
 .interactions {
@@ -32,6 +32,7 @@
   padding: 10px;
   background: #ffffff;
   border: 1px solid #e3e3e3;
+  border-radius: 10px;
 }
 
 .table-header > span {
@@ -53,11 +54,28 @@
   text-align: inherit;
   -webkit-font-smoothing: inherit;
   padding: 0;
-  font-size: inherit;
+  font-size: small;
   cursor: pointer;
 }
 
 .button-active {
   border-radius: 0;
   border-bottom: 1px solid #38BB6C;
+}
+
+.newsLink{
+  color: dimgray;
+  text-decoration: none;
+}
+
+.hackButton {
+  width: 100px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid blue;
+  color: blue;
+  font-size: 1rem;
+  justify-content: center;
+  margin: 0.5rem;
 }

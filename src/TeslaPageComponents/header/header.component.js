@@ -4,7 +4,14 @@ import './header.styles.css'
 import Time from '../Time/Time';
 import Resizewindow from '../../functionComponents/resizeWindowWIdth/Resizewindow';
 import MiniWeather from '../Weather/MiniWeather';
+// import $ from 'jquery'
 
+
+// $(document).ready(function(){
+//     $("hamburgerMenu").click(function(){
+//       $("headerA").slideToggle();
+//     });
+//   });
 
 const Header = () => {
     const [calToggle, setCalToggle] = useState(false);
@@ -13,24 +20,33 @@ const Header = () => {
 
     const toggleCalculation = () => {
         setCalToggle(!calToggle)
-        console.log('1')
     }
     
 
-    const toggleMenu =() => {
+    const toggleMenu = () => {
         setMenuToggle(!menuToggle);
     }
-
-
-
- 
 
     return (
     
         <div className='header_container'>
-            {/* { menuToggle? 'headerA': 'headerA-hide'} */}
             <div className= {window.innerWidth < 450 ? menuToggle? 'headerA': 'headerA-hide' : 'headerA'}>
                     <Link onClick={toggleMenu} to='/reactTodoHook/' className='option'>HOME </Link>
+                    {window.innerWidth < 450 ? 
+                        <div className='dropup'>
+                        <div onClick={toggleMenu}  className="mobile-option" >
+                        
+                        <div  className='mobile-dropup-content'>
+                        CALCULATION:
+                            <Link  to='/reactTodoHook/calculator'>Calculator</Link>
+                            <Link  to='/reactTodoHook/aprcalculator'>APR Cal</Link>
+                            <Link  to='/reactTodoHook/carloancalculator' >Car Loan</Link>
+                            <Link  to='/reactTodoHook/evmiles'>EVmiles</Link>
+                        </div>
+
+                             </div>
+                    </div>
+                        :
                         <div className='dropup'>
                             <Link onClick={toggleCalculation}  className="option" >
         
@@ -38,11 +54,13 @@ const Header = () => {
                                 <Link  to='/reactTodoHook/calculator'>Calculator</Link>
                                 <Link  to='/reactTodoHook/aprcalculator'>APR Cal</Link>
                                 <Link  to='/reactTodoHook/carloancalculator' >Car Loan</Link>
-                                <Link  to='/reactTodoHook/evmiles'>EV miles</Link>
+                                <Link  to='/reactTodoHook/evmiles'>EVmiles</Link>
                             </div>
     
                                 CALCULATION </Link>
                         </div>
+                    }
+                        
                     <Link onClick={toggleMenu} className='option' to='/reactTodoHook/todo'>
                         TODO </Link>
                         <Link onClick={toggleMenu} className='option' to='/reactTodoHook/stocks'>
@@ -58,7 +76,7 @@ const Header = () => {
             <span><MiniWeather/> </span>
             </div>
             <div className='resizeWindow'><Resizewindow/></div>
-            <button className='hamburgerMenu' onClick={toggleMenu}>Menu</button>
+            <button className='hamburgerMenu'  onClick={toggleMenu}>Menu</button>
         </div>
         
     )
