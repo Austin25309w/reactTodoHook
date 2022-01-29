@@ -1,7 +1,5 @@
 import {React, useState, useEffect} from 'react';
 import './carLoan.css'
-import ReactSwitch from 'react-switch';
-
 
 const CarLoan = () => {
     const[amount, setAmount] = useState(0);
@@ -10,13 +8,7 @@ const CarLoan = () => {
     const[carLoan, setCarLoan] = useState();
 
     const[toRight, setToRight] = useState(false);
- 
-
     const[com, setCom] = useState(0)
-
-    // const [seecarloan, setseeCarloan] = useState(false);
-    // const display = seecarloan ? 'block' : 'none';
-    // const handleCarloan = nextChecked => { setseeCarloan(nextChecked)}
 
     function loanCalculation(){
             let decimalRate = interest / 100;
@@ -49,47 +41,32 @@ const CarLoan = () => {
 
     return (
     <div className='car_loan'>
-        {/* <h2>Toggle to {`${seecarloan?'Hide' :'Show'}` } CARLOAN Calculator</h2>
-            <ReactSwitch 
-                onChange={handleCarloan} 
-                checked={seecarloan}
-                width = {68}
-                height = {40}
-                handleDiameter = {40}/>
-                    <div style={{display}}> */}
-                <div className={toRight ? 'box2' : 'box' }>
-                    <h1>CarLoan</h1>
-                            <form >
-                                <div>
-                                    <p >Loan Amount</p>
-                                    <input className='calculatorInputs' type='number' placeholder='amount' onChange={ e =>{ setCom(e.target.value); setAmount(e.target.value);  }}/>
-                                </div>
-                                <div>
-                                    <p>Interest rate (%)</p>
-                                    <input className='calculatorInputs' type='number' placeholder='rate' onChange={ e => setInterest(e.target.value)}/>
-                                </div>
-                                <div>
-                                    <p>Loan Period (months)</p>
-                                    <input className='calculatorInputs' type='number' placeholder='month' onChange={ e => setPeriod(e.target.value)}/>
-                                </div>
-                            </form>
-                            <br/>
-                            <div>
-                                <button className='calculatorButtons' onClick={ () =>loanCalculation(amount, interest, period)}>submit </button>
-                                <span><h4>Monthly Payments</h4> <h1>{`${carLoan === undefined ? '' : '$' + carLoan  }`}</h1></span>
-                                <div>
-            <button className='moveButton' onClick={changeStyle}>{toRight ? '< Driver <': '> Passenger >'}</button>
-            
-        </div>
-                            </div>
+        <div className={toRight ? 'box2' : 'box' }>
+            <h1>CarLoan</h1>
+                <form >
+                    <div>
+                        <p >Loan Amount</p>
+                        <input className='calculatorInputs' type='number' placeholder='amount' onChange={ e =>{ setCom(e.target.value); setAmount(e.target.value);  }}/>
+                    </div>
+                    <div>
+                        <p>Interest rate (%)</p>
+                        <input className='calculatorInputs' type='number' placeholder='rate' onChange={ e => setInterest(e.target.value)}/>
+                    </div>
+                    <div>
+                        <p>Loan Period (months)</p>
+                        <input className='calculatorInputs' type='number' placeholder='month' onChange={ e => setPeriod(e.target.value)}/>
+                    </div>
+                </form>
+                <br/>
+                <div>
+                    <button className='calculatorButtons' onClick={ () =>loanCalculation(amount, interest, period)}>submit </button>
+                    <span><h4>Monthly Payments</h4> <h1>{`${carLoan === undefined ? '' : '$' + carLoan  }`}</h1></span>
+                    <div>
+                        <button className='moveButton' onClick={changeStyle}>{toRight ? '< Driver <': '> Passenger >'}</button>
+                    </div>
                 </div>
-                   
-                    {/* </div>     */}
-        {/* <div className={toRight}>
-               <h1>black</h1>        
-        </div> */}
-
-                  
+        </div>
+    
         
     </div>
     )

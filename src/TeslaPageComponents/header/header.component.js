@@ -4,14 +4,6 @@ import './header.styles.css'
 import Time from '../Time/Time';
 import Resizewindow from '../../functionComponents/resizeWindowWIdth/Resizewindow';
 import MiniWeather from '../Weather/MiniWeather';
-// import $ from 'jquery'
-
-
-// $(document).ready(function(){
-//     $("hamburgerMenu").click(function(){
-//       $("headerA").slideToggle();
-//     });
-//   });
 
 const Header = () => {
     const [calToggle, setCalToggle] = useState(false);
@@ -37,7 +29,7 @@ const Header = () => {
                         <div onClick={toggleMenu}  className="mobile-option" >
                         
                         <div  className='mobile-dropup-content'>
-                        CALCULATION:
+                        <span>CALCULATION:</span>
                             <Link  to='/reactTodoHook/calculator'>Calculator</Link>
                             <Link  to='/reactTodoHook/aprcalculator'>APR Cal</Link>
                             <Link  to='/reactTodoHook/carloancalculator' >Car Loan</Link>

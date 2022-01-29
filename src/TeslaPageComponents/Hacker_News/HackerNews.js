@@ -10,7 +10,7 @@ const DEFAULT_HPP = '50';
 const PATH_BASE = 'https://hn.algolia.com/api/v1';
 const PATH_SEARCH = '/search';
 const PATH_SEARCH_BY_DATE ='/search_by_date'
-const PARAM_SEARCH = 'query=';
+const PARAM_SEARCH = 'query=>2021';
 const PARAM_PAGE = 'page=';
 const PARAM_HPP = 'hitsPerPage=';
 const PARAM_DATE = 'date=2021';
@@ -148,7 +148,7 @@ class HackerNews extends Component {
       results[searchKey].hits
     ) || [];
     // console.log(Object.keys(list).map(k => list[0].created_at))
-      // console.log(Object.keys(list).map(k => list[10]))
+      console.log(Object.keys(list).map(k => list[10]))
     return (
       
       <div className="page">
@@ -278,13 +278,15 @@ class Table extends Component {
               Points
             </Sort>
           </span> */}
-          <span style={{ width: '25%' }}>
+          {window.innerWidth < 700 
+          ? '' 
+          :  <span style={{ width: '25%' }}>
             Archive
-          </span>
+          </span>}
         </div>
         {reverseSortedList.map(item =>
           <div key={item.objectID} className="table-row">
-            <span style={{ width: '75%' }}>
+            <span style={{ width: '100%' }}>
               {/* if item.title is nothing, dismiss it */}
               {/* onClick={ this.promptMessage()} */}
               <a className='newsLink' href={item.url}>{item.title === null ? onDismiss(item.objectID) : item.title }</a>
@@ -302,14 +304,16 @@ class Table extends Component {
             <span style={{ width: '10%' }}>
               {item.points}
             </span> */}
-            <span style={{ width: '25%' }}>
+            {window.innerWidth < 700 
+            ? '': 
+              <span style={{ width: '25%' }}>
               <Button
                 onClick={() => onDismiss(item.objectID)}
                 className="button-inline"
               >
                 Dismiss
               </Button>
-            </span>
+            </span>}
           </div>
         )}
       </div>

@@ -62,7 +62,7 @@ render(){
                         <h3>After charging for<span className='mile'> {`${this.state.time === 0 ? '___' : '⚡' + this.state.time}`} </span>  minutes</h3>
                     </div>
                 </form>
-                <button className='moveButton' onClick={() => this.changeStyle()}>move to passenger ></button>
+                {/* <button className='moveButton' onClick={() => this.changeStyle()}>move to passenger ></button> */}
         </div>
             
             

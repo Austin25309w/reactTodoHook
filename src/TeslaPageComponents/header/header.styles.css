@@ -5,11 +5,12 @@
     position: fixed;
     height: 60px;
     background: #6cf;
-    margin: 0.5rem;
+    margin: 1rem;
     width: auto;
     padding: 1rem;
     display: block;
     bottom: 0;
+    left: 0;
   }
 
 .header_container .option {
@@ -28,8 +29,8 @@
 .bottomTime {
     position: fixed;
     width: 35%;
-    right:0;
-    bottom: 0;
+    right:1rem;
+    bottom: 1rem;
     text-align: right;
     
     /* padding:1rem; */
@@ -39,7 +40,7 @@
     position: fixed;
     width: 35%;
     right:0;
-    bottom: 0;
+    bottom: 1rem;
     text-align: center;
     /* padding:1rem; */
 }
@@ -119,7 +120,7 @@
 
 /* mobile setting */
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 500px) {
     .headerA {
         height: initial;
         position: fixed;
@@ -168,7 +169,8 @@
         display: block;
         width: 100%;
         text-align: center;
-        
+        height: 8vh;
+        font-size: larger;
       }
       .dropup  {
         text-align: right;
@@ -178,7 +180,8 @@
           padding: 0;
       }
       .header_container .option {
-          padding: 1rem;
+          padding: 0.5rem;
+          
       }
       .mobile-dropup-content {
         display: block;
@@ -192,12 +195,14 @@
         border: 1px solid #00ff6c;
         min-width: 100%;
         position: unset;
+        
     }
     .header_container .mobile-option {
         text-decoration: none;
         color: dimgray;
         font-weight: bold;
-        padding: 1.8rem;
+        padding: 1.3rem;
+        
         /* gap: 3em; */
     }
     
@@ -210,10 +215,14 @@
 
     .mobile-dropup-content a {
         color: black;
-        padding: 12px 16px;
+        padding: 2px 10px;
         text-decoration: none;
         display: block;
         border-radius: 10px;
+    }
+    .mobile-dropup-content span {
+        opacity: 0.2;
+        font-size: larger;
     }
 
       .hamburgerMenu{
