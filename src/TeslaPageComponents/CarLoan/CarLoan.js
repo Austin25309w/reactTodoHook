@@ -8,7 +8,7 @@ const CarLoan = () => {
     const[carLoan, setCarLoan] = useState();
 
     const[toRight, setToRight] = useState(false);
-    const[com, setCom] = useState(0)
+    const[format, setFormat] = useState();
 
     function loanCalculation(){
             let decimalRate = interest / 100;
@@ -19,40 +19,41 @@ const CarLoan = () => {
             let byOne = 1 / byPeriod ;
             let oneSubtract = 1 - byOne;
             let finalAns = Math.round(amountInterest) / oneSubtract.toFixed(2) 
-            setCarLoan(finalAns.toFixed(2));
+            setCarLoan(INTEGER_FORMATTER.format(finalAns.toFixed(2)));
     }
-
-
-
-    function addComma(){
-        // let comma = com.toString().split(".");
-        // comma[0] = comma[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        // return comma.join('.')
-        let a = com.toLocaleString('en')
-        setCom(a) 
-    }
-
-    useEffect(() => addComma(com))
 
     const changeStyle = () => {
         setToRight(!toRight)
     }
 
+    const INTEGER_FORMATTER = new Intl.NumberFormat("en-us", {
+        maximumFractionDigits:2,
+    })
+
+    // function callFormat(format){
+        
+    //     setFormat(INTEGER_FORMATTER.format(format))
+    // }
+    // useEffect(() => callFormat(amount))
+
+
+    // useEffect(() => addComma(INTEGER_FORMATTER.format(com)))
+    console.log(format, 'outside')
 
     return (
     <div className='car_loan'>
         <div className={toRight ? 'box2' : 'box' }>
-            <h1>CarLoan</h1>
+            <h1>Car Loan</h1>
                 <form >
-                    <div>
+                    <div className='carLoanField'>
                         <p >Loan Amount</p>
-                        <input className='calculatorInputs' type='number' placeholder='amount' onChange={ e =>{ setCom(e.target.value); setAmount(e.target.value);  }}/>
+                        <input className='calculatorInputs' type='number' placeholder='amount' onChange={ e =>{ setAmount( e.target.value)  }}/>
                     </div>
-                    <div>
+                    <div className='carLoanField'>
                         <p>Interest rate (%)</p>
                         <input className='calculatorInputs' type='number' placeholder='rate' onChange={ e => setInterest(e.target.value)}/>
                     </div>
-                    <div>
+                    <div className='carLoanField'>
                         <p>Loan Period (months)</p>
                         <input className='calculatorInputs' type='number' placeholder='month' onChange={ e => setPeriod(e.target.value)}/>
                     </div>

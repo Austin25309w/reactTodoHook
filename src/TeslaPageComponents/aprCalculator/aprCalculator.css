@@ -1,0 +1,16 @@
+.aprcalculator h1 {
+    margin-bottom: 1rem;
+}
+
+.aprcalculator h3 {
+    margin: 0;
+}
+
+
+.aprForm{
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 700px) {
+
+}

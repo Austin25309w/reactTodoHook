@@ -30,3 +30,12 @@
 
 // react switch to show or hide component
 
+
+
+// --------------------------------------------
+
+        // let comma = com.toString().split(".");
+        // comma[0] = comma[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        // return comma.join('.')
+
+        // add comma

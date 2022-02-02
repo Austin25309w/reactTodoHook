@@ -87,6 +87,7 @@
     text-align: center;
     border: 1px solid #00ff6c;
     transition: height 0ms 0ms, opacity 9000ms 0ms;
+    opacity: 0.9;
 }
 .dropup-content-off {
     display: none;

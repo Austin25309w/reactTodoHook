@@ -45,7 +45,7 @@ export default function FunctionTodo() {
          
         if(name === '') return
         setTodos(prevTodos => {
-            return [...prevTodos, {id: uuidv4(), name: name, completed: false} ]
+            return [...prevTodos, {id: uuidv4(), name: name, complete: false} ]
 
         })
         console.log(name)
@@ -53,13 +53,13 @@ export default function FunctionTodo() {
 
     }
     function handleClearTodos(){
-        const newTodos = todos.filter(todo => !todo.completed)
+        const newTodos = todos.filter(todo => !todo.complete)
         setTodos(newTodos)
     }
 
  
     return (
-        <div>
+    
             
             <div className='todo'>
                 <div className='todos'>
@@ -78,11 +78,14 @@ export default function FunctionTodo() {
                                 editingText = {editingText} 
                                 setEditingText = {setEditingText}
                                 /> 
-                <div>{todos.filter(todo => !todo.complete).length} left to do </div>
-            </div>
+                <div className='leftTodo'>
+                {todos.filter(todo => !todo.complete).length} left to do 
+                </div>
+    
             {/* <UseReducerCounter/> */}
              {/* <UseReducerTodo/> */}
         </div>
+        
     )
 }
 
@@ -95,3 +98,8 @@ export default function FunctionTodo() {
 <UpdateEffectComponent/>
 <ArrayComponent/>
 <Album /> */}
+
+
+// https://github.com/WebDevSimplified/Learn-React-In-30-Minutes/tree/master/src
+
+// https://www.youtube.com/watch?v=hQAHSlTtcmY&t=3s

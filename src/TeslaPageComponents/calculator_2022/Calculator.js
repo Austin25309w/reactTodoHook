@@ -25,8 +25,9 @@ function reducer(state, {type, payload}){
             }
             if(payload.digit === "0" && state.currentOperand === "0") {
                 return state
-            } 
-            if(payload.digit === "." && state.currentOperand.includes(".")){
+            }
+
+            if(payload.digit === "." && state.currentOperand?.includes(".")){
                 return state
             }
             return {
@@ -104,7 +105,7 @@ function reducer(state, {type, payload}){
 } 
 
 function evaluate({currentOperand, previousOperand, operation}){
-    const prev = parseInt(previousOperand)
+    const prev = parseFloat(previousOperand)
     const current = parseFloat(currentOperand)
     if(isNaN(prev) || isNaN(current)) return ""
     let computation = ""
@@ -148,7 +149,7 @@ function Calculator() {
     const changeStyle = () => {
         setToRight(!toRight)
     }
-
+    console.log(currentOperand)
     return (
         <div className='calculator_container'>
             <div className={toRight ? 'calbox2': 'calbox'}>

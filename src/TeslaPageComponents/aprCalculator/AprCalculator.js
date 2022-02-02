@@ -28,15 +28,20 @@ const AprCalculator = () => {
     }
 
     return (
-        <div>
-            <div className={toRight ? 'box2' : 'box'}> 
-                <h1>APR Calculator (30 days)</h1>
+        <div className='aprcalculator'>
+        <div className={toRight ? 'box2' : 'box'}> 
+                <h2>APR Calculator</h2>
                 <div>
                     <p className='aprForm'>APR %</p>
                     <input  className='calculatorInputs'type='number' placeholder='enter APR' onChange={e => setApr(e.target.value)}/>
-                    <p className='aprForm'>Balance</p>
+                    <br/>
+                    <br/>
+                
+                     <p className='aprForm'>Balance</p>
                     <input  className='calculatorInputs'type='number' placeholder='enter balance' onChange={e => setBalance(e.target.value)}/>
-                </div>
+                
+                 </div>   
+                
                 <br/>
 
                 <div>

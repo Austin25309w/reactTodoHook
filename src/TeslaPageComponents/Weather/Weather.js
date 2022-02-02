@@ -5,7 +5,7 @@ export default function Weather() {
 
     // States
     const [apiData, setApiData] = useState({});
-    const [getState, setGetState] = useState('Macau');
+    const [getState, setGetState] = useState('Vietnam');
     const [state, setState] = useState('Macau');
 
         // apiKey and url

@@ -10,3 +10,6 @@ export default function StocksComponent() {
         </div>
     )
 }
+
+
+// https://www.youtube.com/watch?v=T26V1aSEtJE

@@ -8,7 +8,7 @@
 
 .calculator-grid {
     display: grid;
-    grid-template-columns: repeat(4, 7rem);
+    grid-template-columns: repeat(4, 6.2rem);
     grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
     width: 50%;
     height: 100%;
@@ -79,7 +79,7 @@
 
 @media screen and (max-width: 700px) {
     .calculator-grid{
-        grid-template-columns: repeat(4, 5rem);
+        grid-template-columns: repeat(4, 5.5rem);
     }
     .calbox{
         bottom:1rem;

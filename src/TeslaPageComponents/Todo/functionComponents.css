@@ -8,11 +8,7 @@
   }
 
   .singleTodo {
-    display: inline-block;
-    align-items: center;
-    /* background-color: white; */
-    padding: 1rem;
-
+    display: block;
   }
 
   .singleTodo input {
@@ -55,4 +51,8 @@
 
 .editInput {
   width: 5rem;
+}
+
+.leftTodo {
+  margin:1rem 0;
 }
