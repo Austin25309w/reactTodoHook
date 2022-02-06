@@ -74,3 +74,7 @@ export default EvMile;
 
 
 // https://www.inchcalculator.com/electric-vehicle-charging-time-calculator/#:~:text=To%20calculate%20the%20time%20it,car%2C%20use%20the%20following%20formula.&text=In%20other%20words%2C%20the%20time,is%20the%20average%20power%20efficiency.
+
+
+// make an app using this API, us charging station locations
+// https://afdc.energy.gov/fuels/electricity_locations.html#/find/nearest?fuel=ELEC&ev_levels=dc_fast
