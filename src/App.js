@@ -10,6 +10,7 @@ import CarLoan from './TeslaPageComponents/CarLoan/CarLoan';
 import EvMile from './TeslaPageComponents/EvMile/EvMile';
 import StocksComponent from './TeslaPageComponents/Stocks/StocksComponent';
 import HackerNews from './TeslaPageComponents/Hacker_News/HackerNews';
+import Snake from './TeslaPageComponents/Snake/Snake';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path = '/reactTodoHook/evmiles' component ={ EvMile }/>
             <Route path = '/reactTodoHook/stocks' component ={ StocksComponent }/>
             <Route path = '/reactTodoHook/news' component ={ HackerNews }/>
+            <Route path = '/reactTodoHook/snake' component ={ Snake }/>
 
             
         </Switch>
